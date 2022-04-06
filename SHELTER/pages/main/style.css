@@ -1,0 +1,12 @@
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 1280px;
+    
+};
+
+main { 
+    background-image: url(/lneer-JSFE2022Q1/SHELTER/assets/images/start-screen-gradient-background.png);
+    
+
+};
