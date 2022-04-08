@@ -1,12 +1,189 @@
-body {
+body{
+    margin: 0;
+    padding: 0;
+    max-width: 1280px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 160%;
+    color: #4C4C4C;
+
+}
+*,
+*:after,
+*::before {
+    box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+}
+
+.wrapper{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Start screen*/
+.start_screen{
+    width: 100%;
+    height: 908px;
+    background: 
+    url(/SHELTER/assets/images/start-screen-gradient-background.png) 
+    center no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.start_container{
+    width: 1200px;
     display: flex;
-    flex-flow: column nowrap;
-    width: 1280px;
-    
-};
+    justify-content: space-between;
+    position: absolute;
+    bottom: -6px;
+}
 
-main { 
-    background-image: url(/lneer-JSFE2022Q1/SHELTER/assets/images/start-screen-gradient-background.png);
-    
+.start_text{
+    margin-top: 163px;
+    width: 460px;
+    height: 322px;
+   
+}
+.start_title{
+    width: 310px;
+    font-size: 44px;
+    line-height: 130%;
+    color: #FFFFFF;
+}
+.start_subtitle{
+    margin-top: 42px;
+    width: 460px;
+    margin-bottom: 0;
+    color: #CDCDCD;
+    text-align: left;
+    letter-spacing: 0.0145em;
+}
 
-};
+.start_btn{
+    display: inline-block;
+    margin-top: 42px;
+    vertical-align: top;
+    padding: 15px 45px;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #292929;
+    text-align: center;
+    background-color: #F1CDB3;
+    border-radius: 100px;
+    text-decoration: none;  
+}
+.start_btn:hover {
+    background-color: #FDDCC4;
+}
+/* Header */
+.start_header{
+    margin-top: 60px;
+    width: 100%;
+    max-width: 1280px;
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.header_conteiner{
+    display: flex;
+    justify-content: space-between;
+}
+.logo_title{
+    font-size: 32px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: #F1CDB3;
+}
+.logo_subtitle{
+    margin-top: 10px;
+    margin-left: 4px;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+}
+.header_nav_menu {
+    margin-top: 16px;
+    width: 443px;
+    display: flex;
+    justify-content: space-between;
+    align-self:flex-start
+}
+.nav_link {  
+    text-decoration: none;
+    color: #CDCDCD;
+    transition: color 0.1s;
+} 
+
+.nav_link:hover{
+    color: #FAFAFA;
+}
+
+/*About pets*/
+
+.about{
+    width: 100%;
+    height: 588px;
+}
+.about_conteiner{
+    margin-top: 80px;
+    margin-left: 175px;
+    margin-right: 175px;
+    height: 409px;
+    
+    display: flex;
+    justify-content: space-between;
+    
+}
+.about_pet{
+    padding: 0;
+    margin: 0;
+}
+.about_content{
+    width: 430px;
+}
+.about_content_heading{
+    margin-top: 14px;
+    width: 370px;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #545454;
+}
+
+.about_content_subheading {
+    margin-top: 25px;
+    margin-bottom: 14px;
+    font-size: 15px;
+    line-height: 160%;
+    letter-spacing: 0.0145em;
+    color: #4C4C4C;
+}
+
+/*OUR FRIEND*/
+.our_friens {
+    width: 100%;
+    height: 877px;
+    background: #F6F6F6;
+}
+.pets_heading {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
