@@ -7,6 +7,7 @@ body{
     font-weight: 400;
     font-size: 15px;
     line-height: 160%;
+    letter-spacing: 0.0145em;
     color: #4C4C4C;
 
 }
@@ -22,7 +23,61 @@ h1,h2,h3,h4,h5,h6 {
     font-style: normal;
     font-weight: 400;
 }
-
+h4 {
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+}
+.content_heading {
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+}
+.bank_heading{
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    margin-top: 20px;
+}
+.btn{
+    display: inline-block;
+    vertical-align: top;
+    padding: 15px 45px;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #292929;
+    text-align: center;
+    background-color: #F1CDB3;
+    border-radius: 100px;
+    text-decoration: none; 
+}
+.btn:hover {
+    background-color: #FDDCC4;
+}
+.btn_reverse{
+    display: inline-block;
+    vertical-align: top;
+    padding: 15px 45px;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #292929;
+    text-align: center;
+    border: 2px solid #F1CDB3;
+    background-color: #FAFAFA;
+    border-radius: 100px;
+    text-decoration: none; 
+}
+.btn_reverse:hover{
+    background-color: #F1CDB3;
+}
 .wrapper{
     width: 100%;
     max-width: 1200px;
@@ -54,7 +109,7 @@ h1,h2,h3,h4,h5,h6 {
    
 }
 .start_title{
-    width: 310px;
+    width: fit-content;
     font-size: 44px;
     line-height: 130%;
     color: #FFFFFF;
@@ -64,30 +119,13 @@ h1,h2,h3,h4,h5,h6 {
     width: 460px;
     margin-bottom: 0;
     color: #CDCDCD;
-    text-align: left;
-    letter-spacing: 0.0145em;
+    
 }
 
 .start_btn{
-    display: inline-block;
-    margin-top: 42px;
-    vertical-align: top;
-    padding: 15px 45px;
-    font-family: 'Georgia';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 130%;
-    letter-spacing: 0.06em;
-    color: #292929;
-    text-align: center;
-    background-color: #F1CDB3;
-    border-radius: 100px;
-    text-decoration: none;  
+    margin-top: 42px;  
 }
-.start_btn:hover {
-    background-color: #FDDCC4;
-}
+
 /* Header */
 .start_header{
     margin-top: 60px;
@@ -161,18 +199,12 @@ h1,h2,h3,h4,h5,h6 {
 .about_content_heading{
     margin-top: 14px;
     width: 370px;
-    font-size: 35px;
-    line-height: 130%;
-    letter-spacing: 0.06em;
     color: #545454;
 }
 
 .about_content_subheading {
     margin-top: 25px;
     margin-bottom: 14px;
-    font-size: 15px;
-    line-height: 160%;
-    letter-spacing: 0.0145em;
     color: #4C4C4C;
 }
 
@@ -182,8 +214,148 @@ h1,h2,h3,h4,h5,h6 {
     height: 877px;
     background: #F6F6F6;
 }
+.pos_pet{
+    position: relative;
+    top: 60px;
+}
 .pets_heading {
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
+   
+}
+.pos_contetn_heading{
+        text-align: center;
+}
+.pets_slicer{
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-around;;
+}
+.pets_card{
+    display: flex;
+    flex-direction: column;
+    width: 270px;
+    height: 435px;
+}
+.pets_card:hover .card_info {
+    background: #FFFFFF;
+}
+.pets_card:hover .card_info .btn_reverse{
+    background-color: #F1CDB3;
+}
+.card_background{
+    background: #FAFAFA;
+    text-align: center;
+    width: 270px;
+    height: 270px;
+    border-radius: 9px 9px 0 0;
+}
+.card_info{
+    background: #FAFAFA;
+    padding-top: 30px;
+    text-align: center;
+    height: calc(435px - 270px);
+    border-radius: 0 0 9px 9px;
+}
+.card_description {
+    margin: 0;
+    padding: 0;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+    color: #545454;
+}
+.card_btn{
+    margin-top: 30px;
+}
+.pets_get_know {
+text-align: center;
+margin-top: 60px;
+}
+
+/* How help*/
+
+.how_help{
+    width: 100%;
+    height: 611px;
+    background: #FFFFFF;
+}
+.help_pos{
+    position: relative;
+    top:80px;
+}
+.help_list_1{
+    margin: 60px auto 0 auto;
+    width: 1026px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.help_list_2{
+    margin-top: 55px;
+    width: 1026px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+}
+.help_conteiner{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: 113px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*Donation*/
+.donation_pos{
+    position: relative;
+    top:80px;
+}
+.donation{
+    width: 100%;
+    height: 462px;
+    background: #F6F6F6;
+}
+.donation_conteiner{
+    width: 918px;
+    height: 282px;
+    display: flex;
+    align-items: center;
+}
+.donation_content{
+
+    margin-left: 30px;
+}
+.bank_card_number{
+    margin-top: 20px;
+    display: inline-block;
+    padding: 10px 15px;
+    background: #F1CDB3;
+    border-radius: 9px;
+}
+.credit_card{
+    margin-right: 15px;
+    margin-bottom: 0;
+}
+
+.donation_text{
+    margin-top: 20px;
+    margin-bottom: 0;
+    font-family: 'Arial';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #B2B2B2;
+}
+.donation_description{
+    height: 72px;
+    width: 380px;
 }
