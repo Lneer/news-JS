@@ -1,8 +1,21 @@
 body{
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     max-width: 1280px;
  }
+ @font-face {
+     font-family:'Georgia';
+     src: url(/SHELTER/assets/fonts/georgia/georgia-regular.ttf);
+     font-style: normal;
+ }
+
+@font-face {
+    font-family:'Arial' ;
+    src: url(/SHELTER/assets/fonts/arial/arial-regular.ttf);
+    font-style: normal;
+}
+
+
 *,
 *:after,
 *::before {
@@ -13,8 +26,9 @@ body{
     max-width: 1200px;
     margin: 0 auto;
 }
-p{
+p,a {text-decoration: none;
     margin: 0;
+    padding: 0;
 }
 h1,h2,h3,h4,h5,h6 {
     margin: 0;
@@ -39,6 +53,7 @@ h1,.logo_title{
     font-size: 13px;
     line-height: 15px;
     letter-spacing: 0.1em;
+    margin-left: 4px;
 }
 h2 {
     font-size: 44px;
@@ -102,15 +117,46 @@ h5 {
 .passive_bnt_border{
     border: 2px solid #CDCDCD;
 }
+.btn_reverse{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 52px;
+    width: 187px;
+    border-radius: 100px;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #292929;
+    border: 2px solid #F1CDB3;
+    background-color: #FAFAFA;
+    
+    text-decoration: none;
+
+}
+.btn_reverse:hover{
+    background-color: #F1CDB3;
+}
+
 /* Header */
 .header{
     width: 100%;
     max-width: 1280px; 
     height: 120px;
-    background: #FFFFFF;  
+    background: #FFFFFF; 
+    position: fixed;
+    
+}
+.header_pos{
+    position: relative;
+    top:30px;
+    
 }
 .header_conteiner{
-    margin-top: 30px;
+    margin-top: 0;
     display: flex;
     justify-content: space-between;
 }
@@ -128,35 +174,45 @@ h5 {
 }
 .nav_link {  
     text-decoration: none;
-    transition: color 0.1s;
-    padding-bottom: 5px;
-    border-bottom: none;
-} 
+    border-bottom: 0px solid #F1CDB3;
+}
+
 .nav_link:hover{
     color: #292929;
-    padding-bottom: 5px;
+}    
+
+.nav_link.active{
+    color: #292929;
     border-bottom: 3px solid #F1CDB3;
 }
-.nav_link:active {
-    padding-bottom: 5px;
+.nav_link:hover:active{
+    color: #292929;
     border-bottom: 3px solid #F1CDB3;
 }
+
+
+.nav_link:hover::after {
+    color: #292929;
+    border-bottom: 3px solid #F1CDB3
+}
+
 /*MAIN PAGE*/
 main{
     width: 100%;
     max-width: 1280px; 
-    height: 1342px;
+    height: 1462px;
     background: #F6F6F6; 
+    
 }
 .main_container{
+    padding-top: 200px;
     display: flex;
     flex-direction: column;
     gap:45px;
     justify-content: space-between;
 }
 .main_pos{
-    position: relative;
-    top:80px
+    
 }
 .pet_header{
     width: 400px;
@@ -195,9 +251,12 @@ main{
     border-radius: 9px 9px 0 0;
 }
 .card_info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:30px;
     background: #FAFAFA;
-    padding-top: 30px;
-    text-align: center;
     height: calc(435px - 270px);
     border-radius: 0 0 9px 9px;
 }
@@ -230,23 +289,24 @@ footer{
       );
 }
 .footer_pos{
-    position: relative;
-    top: 40px;
+    
 }
 .footer_conteiner{
+    padding-top: 40px;
     display: flex;
     justify-content: space-between;
     width: 1200px;
-    height: 310px;
+    height: auto;
 }
 .foot_title{
     color: #FFFFFF;
 }
 .contacts{
+    padding-top: 16px;
     width: 279px;
     display: flex;
     flex-direction: column;
-    gap:20px;
+    gap:40px;
 }
 .email_container{
     display: flex;
@@ -268,13 +328,15 @@ footer{
     text-decoration: none;
 }
 .adress{
+    padding-top: 16px;
     width: 302px;
     display: flex;
     flex-direction: column;
-    gap:20px;
+    gap:33px;
 }
 
 .footer_image_container{
     width: 300px;
+    height: 310px;
     background-image: url(/SHELTER/assets/images/footer-puppy.png);
 }
