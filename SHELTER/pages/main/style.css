@@ -408,7 +408,8 @@ h5 {
     border-radius: 9px;
 }
 
-.credin_number{
+.bank_card_number:hover{
+    background:#FDDCC4;
 }
 
 
