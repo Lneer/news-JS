@@ -6,12 +6,12 @@ body{
  }
  @font-face {
      font-family:'Georgia';
-     src: url(/lneer-JSFE2022Q1/SHELTER/assets/fonts/georgia/georgia-regular.ttf);
+     src: url(../../assets/fonts/georgia/georgia-regular.ttf);
  }
 
 @font-face {
     font-family:'Arial' ;
-    src: url(/lneer-JSFE2022Q1/SHELTER/assets/fonts/arial/arial-regular.ttf);
+    src: url(../../assets/fonts/arial/arial-regular.ttf);
 }
 
 
@@ -337,5 +337,5 @@ footer{
 .footer_image_container{
     width: 300px;
     height: 310px;
-    background-image: url(/lneer-JSFE2022Q1/SHELTER/assets/images/footer-puppy.png);
+    background-image: url(../../assets/images/footer-puppy.png);
 }
