@@ -2,6 +2,7 @@ body{
     margin: 0 auto;
     padding: 0;
     max-width: 1280px;
+    background-color: #CDCDCD;
  }
  @font-face {
      font-family:'Georgia';
@@ -82,7 +83,7 @@ h5 {
     font-weight: 400;
     font-size: 15px;
     line-height: 160%;
-    letter-spacing: 0.0145em;
+    
 }
 .color-primary{
     color: #F1CDB3;
