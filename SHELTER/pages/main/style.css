@@ -6,13 +6,13 @@ body{
  }
  @font-face {
      font-family:'Georgia';
-     src: url(/SHELTER/assets/fonts/georgia/georgia-regular.ttf);
+     src: url(/lneer-JSFE2022Q1/SHELTER/assets/fonts/georgia/georgia-regular.ttf);
      font-style: normal;
  }
 
 @font-face {
     font-family:'Arial' ;
-    src: url(/SHELTER/assets/fonts/arial/arial-regular.ttf);
+    src: url(/lneer-JSFE2022Q1/SHELTER/assets/fonts/arial/arial-regular.ttf);
     font-style: normal;
 }
 
@@ -172,7 +172,7 @@ h5 {
     width: 100%;
     height: 908px;
     background: 
-    url(/SHELTER/assets/images/start-screen-gradient-background.png) 
+    url(/lneer-JSFE2022Q1/SHELTER/assets/images/start-screen-gradient-background.png) 
     center no-repeat;
     background-size: cover;
     position: relative;
@@ -486,5 +486,5 @@ footer{
 .footer_image_container{
     width: 300px;
     height: 310px;
-    background-image: url(/SHELTER/assets/images/footer-puppy.png);
+    background-image: url(/lneer-JSFE2022Q1/SHELTER/assets/images/footer-puppy.png);
 }
