@@ -1,0 +1,21 @@
+{
+  "name": "lneer-jsfe2022q1",
+  "version": "1.0.0",
+  "description": "Private repository for @lneer",
+  "main": "index.js",
+  "scripts": {
+    "style": "sass shelter/sass/style.scss shelter/sass/style.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+ 
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rolling-scopes-school/lneer-JSFE2022Q1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rolling-scopes-school/lneer-JSFE2022Q1/issues"
+  },
+  "homepage": "https://github.com/rolling-scopes-school/lneer-JSFE2022Q1#readme"
+}

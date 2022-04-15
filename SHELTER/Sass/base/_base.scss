@@ -1,0 +1,37 @@
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+    padding: 0;
+}
+h1,.logo_title{
+    @extend %font-title ;
+    @include font (3.2rem);
+}
+.logo_subtitle {
+    @extend %font-content ;
+    @include font (1.3rem, 1.5rem, 10%);
+}
+
+h2 {
+    @extend %font-title ;
+    @include font (4.4rem, 150%, 0);
+}
+
+h3 {
+    @extend %font-title ;
+    @include font (3.5rem, 130%, 6%); 
+}
+
+h4 {
+    @extend %font-title ;
+    @include font (2.0rem, 115%, 6%);
+}
+
+h5 {
+    @extend %font-title ;
+    @include font (1.5rem, 110%, 6%);
+}
+
+.paragraph_l {
+    @extend %font-content ;
+    @include font (1.5rem, 160%, 0%);
+}
