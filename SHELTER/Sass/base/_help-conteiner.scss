@@ -5,8 +5,26 @@
     height: 113px;
     justify-content: space-between;
     align-items: center;
+    @include media-mobile{
+        height: 87px;
+    }
+
+    :nth-child(2) {
+    >*{
+        @include media-mobile{
+            font-family: Georgia;
+            @include font (1.5rem, 110%);
+        }
+    }      
 }
 
 .help-conteiner__image{
     font-size: 0;
+    @include media-mobile{
+        >*{
+            width: 50px;
+        }
+    }
+   
+}
 }

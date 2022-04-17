@@ -3,7 +3,10 @@
     width: 443px;
     display: flex;
     justify-content: space-between;
-    align-self:flex-start
+    align-self:flex-start;
+    @include media-mobile{
+       display: none;
+    }
 }
 
 .nav__link {  

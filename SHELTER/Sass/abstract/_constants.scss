@@ -11,8 +11,8 @@ $color-light-l:         #F6F6F6;
 $color-light-xl:        #ffffff;
 
 $device-width :1280px;
-$content-width: 1200px;
+$content-width: calc(100% - 80px);
 $device-tablet-width: 768px;
-$content-tablet-width: 708px;
+$content-tablet-width: calc(100% - 60px);
 $device-mobile-width: 320px;
-$content-mobile-width: 260px;
+$content-mobile-width: calc(100% - 20px);

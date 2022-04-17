@@ -1,6 +1,9 @@
 .pets-card {
     display: flex;
     flex-direction: column;
+    @include media-mobile{
+        flex-direction: column-reverse;
+    }
     width: 270px;
     height: 435px;
     background: $color-light-s;
