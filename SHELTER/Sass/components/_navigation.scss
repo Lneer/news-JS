@@ -1,0 +1,16 @@
+.navigation {
+    margin-top: 16px;
+    width: 443px;
+    display: flex;
+    justify-content: space-between;
+    align-self:flex-start
+}
+
+.nav__link {  
+    text-decoration: none;
+    border-bottom: 0px solid #F1CDB3;
+    @extend %transition;
+
+    &.active{border-bottom: 3px solid #F1CDB3; }
+    &:hover {color: $color-light-s;}
+}  

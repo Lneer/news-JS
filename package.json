@@ -4,7 +4,7 @@
   "description": "Private repository for @lneer",
   "main": "index.js",
   "scripts": {
-    "style": "sass shelter/sass/style.scss shelter/sass/style.css",
+    "style": "sass  shelter/sass/style.scss shelter/sass/style.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
  

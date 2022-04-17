@@ -1,0 +1,12 @@
+.logo {
+    display: flex;
+    flex-direction: column;
+    gap: 1.0rem;
+}
+
+.title_color { 
+    color: $color-primary;
+}
+.subtitle_color{
+    color: $color-light-xl;
+}

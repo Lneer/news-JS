@@ -1,37 +1,71 @@
+html{
+    font-size: 10px;
+}
 h1,h2,h3,h4,h5,h6 {
     margin: 0;
     padding: 0;
 }
+body{
+    margin: 0 auto;
+    padding: 0;
+    max-width: $device-width;
+    background-color:  #B2B2B2;
+
+}
+a,p{
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+}
+*,
+*:after,
+*::before {
+    box-sizing: border-box; 
+}
+
 h1,.logo_title{
     @extend %font-title ;
     @include font (3.2rem);
 }
 .logo_subtitle {
     @extend %font-content ;
-    @include font (1.3rem, 1.5rem, 10%);
+    @include font (1.3rem, 1.5rem, 0.1em);
+    padding-left: 4px;
 }
 
 h2 {
     @extend %font-title ;
-    @include font (4.4rem, 150%, 0);
+    @include font (4.4rem, 130%, 0);
 }
 
 h3 {
     @extend %font-title ;
-    @include font (3.5rem, 130%, 6%); 
+    @include font (3.5rem, 130%); 
 }
 
 h4 {
     @extend %font-title ;
-    @include font (2.0rem, 115%, 6%);
+    @include font (2.0rem, 115%);
 }
 
 h5 {
     @extend %font-title ;
-    @include font (1.5rem, 110%, 6%);
+    @include font (1.5rem, 110%);
 }
 
 .paragraph_l {
     @extend %font-content ;
-    @include font (1.5rem, 160%, 0%);
+    @include font (1.5rem, 160%, 0);
 }
+
+.color-primary          { color:$color-primary }
+.color-primary-light    { color:$color-primary-light }
+.color-dark-3xl         { color:$color-dark-3xl}
+.color-dark-2xl         { color:$color-dark-2xl}
+.color-dark-xl          {color: $color-dark-xl}
+.color-dark-l           {color: $color-dark-l}
+.color-dark-m           {color: $color-dark-m}
+.color-dark-s           { color:$color-dark-s}
+.color-light-s          {color: $color-light-s}
+.color-light-l          {color: $color-light-l}
+.color-light-xl         {color: $color-light-xl}

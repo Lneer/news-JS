@@ -1,0 +1,28 @@
+.start-screen{
+    width: 100%;
+    background: 
+    url(../assets/images/start-screen-gradient-background.png) 
+    center no-repeat;
+    background-size: cover;
+}
+
+.start-screen__container{
+    width: $content-width;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 180px;
+}
+
+.start-text{
+    margin-top: 163px;
+    width: 460px;
+    height: 322px;
+}
+.start-text_subtitle{
+    margin-top: 42px;
+    width: 460px; 
+}
+.start-image{
+    font-size: 0px;
+}

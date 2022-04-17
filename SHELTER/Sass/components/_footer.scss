@@ -1,0 +1,59 @@
+/**Footer**/
+footer{
+    width: 100%;
+    height: 350px;
+    background-image: radial-gradient(
+        100% 215.42% at 0% 0%,
+        #5b483a 0%,
+        #262425 100%
+      );
+}
+.footer_conteiner{
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    width: 1200px;
+    height: auto;
+}
+.foot_title{
+    color: #FFFFFF;
+}
+.contacts{
+    padding-top: 16px;
+    width: 279px;
+    display: flex;
+    flex-direction: column;
+    gap:40px;
+}
+.email_container{
+    display: flex;
+    gap:20px;
+    align-items: center;
+    text-decoration: none;
+}
+.email_image{
+    align-self: center;
+    display: block;
+}
+.email_text{
+    color: #F1CDB3;
+}
+.telephone_container{
+    display: flex;
+    gap:20px;
+    align-items: center;
+    text-decoration: none;
+}
+.adress{
+    padding-top: 16px;
+    width: 302px;
+    display: flex;
+    flex-direction: column;
+    gap:33px;
+}
+
+.footer_image_container{
+    width: 300px;
+    height: 310px;
+    background-image: url(../assets/images/footer-puppy.png);
+}

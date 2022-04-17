@@ -1,0 +1,25 @@
+.header{  
+    width: 100%;
+    max-width: $device-width;
+}
+    
+.header_abspos {
+    margin-top: 60px;
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+}
+
+.header_fixpos {
+    position: fixed;
+     background: $color-light-xl;
+}
+
+.header__conteiner{
+    display: flex;
+    justify-content: space-between;
+}
+
+.start_btn{
+    margin-top: 42px;  
+}

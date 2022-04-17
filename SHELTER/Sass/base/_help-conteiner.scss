@@ -1,0 +1,12 @@
+.help-conteiner{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: 113px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.help-conteiner__image{
+    font-size: 0;
+}

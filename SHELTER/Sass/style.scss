@@ -3,5 +3,22 @@
 @import "abstract/placeholders";
 @import "abstract/mixins";
 
-
 @import "base/base";
+@import "base/btn";
+@import "base/pets-card";
+@import "base/logo";
+@import "base/help-conteiner";
+
+@import "layout/wrapper";
+@import "layout/header";
+
+
+@import "components/navigation";
+@import "components/start-screen";
+@import "components/about-shelter";
+@import "components/our-friends";
+@import "components/how-help";
+@import "components/donation";
+@import "components/footer";
+
+
