@@ -972,8 +972,8 @@ h5 {
 
 @media (min-width: 300px) and (max-width: 767px) {
   .pets__album {
-    padding-left: calc((100vw - 270px) / 2);
-    padding-right: calc((100vw - 270px) / 2);
+    padding-left: calc((85vw - 270px) / 2);
+    padding-right: calc((85vw - 270px) / 2);
   }
 }
 
