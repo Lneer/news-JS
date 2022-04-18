@@ -17,3 +17,7 @@
     &.active{border-bottom: 3px solid #F1CDB3; }
     &:hover {color: $color-light-s;}
 }  
+.pet_link{
+    
+    &:hover {color: $color-dark-3xl;}
+}

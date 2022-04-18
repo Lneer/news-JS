@@ -37,7 +37,10 @@
        justify-content: center;
     }
     :nth-child(1){
-        width: 260px;
+        @include media-mobile{
+            width: 260px;
+         }
+        
     }
 }
 .about__content{
