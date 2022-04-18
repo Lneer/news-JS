@@ -1,7 +1,7 @@
 .start-screen{
     width: 100%;
     background: 
-    url(../assets/images/start-screen-gradient-background.png) 
+    url(../../assets/images/start-screen-gradient-background.png) 
     center no-repeat;
     background-size: cover;
     position: relative;
@@ -90,7 +90,7 @@
 
 .start_btn{
     @include media-tablet{
-        display: block;
+        display: flex;
         margin:42px auto 0 auto;
     }
     margin-top: 42px;  

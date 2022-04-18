@@ -1,13 +1,15 @@
 .our-friends {
     width: 100%;
     height: 877px;
+    background: $color-light-l;
     @include media-mobile{
         height: auto;
         padding-bottom: 42px;
     }
-    background: $color-light-l;
+    
 }
 .our-friends__conteiner{
+    
     @extend %top-space;
     @include media-mobile{
         padding-top: 42px;
@@ -18,6 +20,23 @@
     justify-content: space-between;
     align-items: center;
     gap: 60px;
+}
+.pet-page{
+    background: $color-light-l;
+    width: 100%;
+    height: auto;
+}
+.pets-page_modify{
+padding-top: 200px;
+padding-bottom: 100px;
+@include media-tablet{
+    padding-top: 180px;
+    padding-bottom: 70px;
+}
+@include media-mobile{
+    padding-top: 162px;
+    padding-bottom: 42px;
+}
 }
 .our-friends-heading {
     width: 100%;
@@ -44,8 +63,7 @@
         @include media-mobile{
             order: 5;
         }
-    }
-   
+    }  
     
 }
 .pets__album {
@@ -59,18 +77,24 @@
         padding-left: calc((100vw - 270px) / 2);
         padding-right:calc((100vw - 270px) / 2);
     }
-}
-.Woody{
-    @include media-tablet{
+    :nth-child(n + 3){
+        @include media-tablet{
         display: none;
+        }
     }
-    @include media-mobile{
+    :nth-child(n + 2){
+        @include media-mobile{
         display: none;
+        }
     }
 }
 
-.Jenifer{
+.album_scroll{
+    display: flex;
+    width: auto;
+    justify-content: space-between;
+    column-gap: 20px;
     @include media-mobile{
-        display: none;
+        column-gap: 10px;
     }
 }

@@ -1,4 +1,4 @@
-.round_btn, .nav__link {
+.round-btn, .nav__link {
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
 }
@@ -13,6 +13,18 @@ h1, .logo_title, h2, h3, h4, h5, .btn, .btn_reverse, .card__description {
 
 .about_position, .our-friends__conteiner, .help-title, .donation_conteiner {
   padding-top: 80px;
+}
+
+@font-face {
+  font-family: 'Georgia';
+  src: url(../../assets/fonts/georgia/georgia-regular.ttf);
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Arial';
+  src: url(../../assets/fonts/arial/arial-regular.ttf);
+  font-style: normal;
 }
 
 html {
@@ -173,6 +185,10 @@ h5 {
   background-color: #FDDCC4;
 }
 
+.large {
+  width: 260px;
+}
+
 .btn_reverse {
   width: 187px;
   height: 52px;
@@ -202,7 +218,8 @@ h5 {
   background-color: #F1CDB3;
 }
 
-.round_btn {
+.round-btn {
+  background-color: #FAFAFA;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -218,9 +235,22 @@ h5 {
   border: 2px solid #F1CDB3;
 }
 
-.round_btn:hover {
+.round-btn:enabled:hover {
   background-color: #F1CDB3;
   cursor: pointer;
+}
+
+.round-btn:disabled {
+  border: 2px solid #CDCDCD;
+}
+
+.round-btn :enabled {
+  border: 2px solid #F1CDB3;
+}
+
+.count {
+  background-color: #F1CDB3;
+  border: 2px solid #F1CDB3 !important;
 }
 
 .pets-card {
@@ -234,15 +264,7 @@ h5 {
   width: 270px;
   height: 435px;
   background: #FAFAFA;
-}
-
-@media (min-width: 320px) and (max-width: 767px) {
-  .pets-card {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
-  }
+  border-radius: 9px;
 }
 
 .pets-card:hover {
@@ -256,6 +278,9 @@ h5 {
 }
 
 .card__background {
+  -webkit-box-ordinal-group: 11;
+      -ms-flex-order: 10;
+          order: 10;
   text-align: center;
   width: 270px;
   height: 270px;
@@ -264,6 +289,9 @@ h5 {
 }
 
 .card__info {
+  -webkit-box-ordinal-group: 21;
+      -ms-flex-order: 20;
+          order: 20;
   padding-top: 30px;
   text-align: center;
   height: calc(435px - 270px);
@@ -355,12 +383,30 @@ h5 {
   width: 3.0rem;
   height: 2.2rem;
   font-size: 0;
-  background-image: url(../assets/icons/Burger.svg);
+  background-image: url(../../assets/icons/Burger.svg);
   display: none;
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
   .burger {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-item-align: center;
+        align-self: center;
+  }
+}
+
+.pets-burger {
+  width: 3.0rem;
+  height: 2.2rem;
+  font-size: 0;
+  background-image: url(../../assets/icons/Pets-Burger.svg);
+  display: none;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .pets-burger {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -405,12 +451,14 @@ h5 {
 @media (min-width: 768px) and (max-width: 1279px) {
   .wrapper {
     max-width: calc(100% - 60px);
+    margin: 0 auto;
   }
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
   .wrapper {
     max-width: calc(100% - 20px);
+    margin: 0 auto;
   }
 }
 
@@ -439,6 +487,7 @@ h5 {
 }
 
 .header_fixpos {
+  padding: 30px 0 30px;
   position: fixed;
   background: #ffffff;
 }
@@ -492,7 +541,7 @@ h5 {
 
 .start-screen {
   width: 100%;
-  background: url(../assets/images/start-screen-gradient-background.png) center no-repeat;
+  background: url(../../assets/images/start-screen-gradient-background.png) center no-repeat;
   background-size: cover;
   position: relative;
 }
@@ -626,7 +675,9 @@ h5 {
 
 @media (min-width: 768px) and (max-width: 1279px) {
   .start_btn {
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     margin: 42px auto 0 auto;
   }
 }
@@ -781,6 +832,31 @@ h5 {
   }
 }
 
+.pet-page {
+  background: #F6F6F6;
+  width: 100%;
+  height: auto;
+}
+
+.pets-page_modify {
+  padding-top: 200px;
+  padding-bottom: 100px;
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .pets-page_modify {
+    padding-top: 180px;
+    padding-bottom: 70px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .pets-page_modify {
+    padding-top: 162px;
+    padding-bottom: 42px;
+  }
+}
+
 .our-friends-heading {
   width: 100%;
   max-width: 400px;
@@ -852,20 +928,33 @@ h5 {
 }
 
 @media (min-width: 768px) and (max-width: 1279px) {
-  .Woody {
+  .pets__album :nth-child(n + 3) {
     display: none;
   }
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
-  .Woody {
+  .pets__album :nth-child(n + 2) {
     display: none;
   }
 }
 
+.album_scroll {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
+}
+
 @media (min-width: 320px) and (max-width: 767px) {
-  .Jenifer {
-    display: none;
+  .album_scroll {
+    -webkit-column-gap: 10px;
+            column-gap: 10px;
   }
 }
 
@@ -1170,13 +1259,14 @@ footer {
     padding-right: 34px;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    -webkit-column-gap: 42px;
+            column-gap: 42px;
   }
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
   .footer_conteiner {
     padding-top: 28px;
-    width: 100%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -1198,8 +1288,13 @@ footer {
 
 .foot_title {
   color: #FFFFFF;
-  width: calc(100% - 20px);
-  margin: 0 auto;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .foot_title {
+    width: calc(100% - 20px);
+    margin: 0 auto;
+  }
 }
 
 .contacts {
@@ -1284,7 +1379,6 @@ footer {
 
 @media (min-width: 320px) and (max-width: 767px) {
   .adress {
-    width: 100%;
     padding-top: 0;
     row-gap: 40px;
   }
@@ -1294,11 +1388,13 @@ footer {
   .footer_image_container {
     margin: 0 auto;
     padding-top: 6.5rem;
+    padding-left: 150px;
+    padding-right: 150px;
   }
 }
 
 .footer_image {
-  background-image: url(../assets/images/footer-puppy.png);
+  background-image: url(../../assets/images/footer-puppy.png);
   background-size: cover;
   width: 300px;
   height: 310px;

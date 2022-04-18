@@ -24,10 +24,10 @@ footer{
         padding-left: 34px;
         padding-right: 34px;
         flex-wrap: wrap;
+        column-gap: 42px;
       } 
     @include media-mobile{
         padding-top: 28px;
-        width: 100%;
         flex-direction: column;
         align-items: center;
         row-gap: 40px;
@@ -44,8 +44,10 @@ footer{
 
 .foot_title{
     color: #FFFFFF;
-    width: calc(100% - 20px);
-    margin: 0 auto;
+    @include media-mobile{
+        width: calc(100% - 20px);
+        margin: 0 auto;
+    } 
 }
 .contacts{
     @include media-tablet{
@@ -86,7 +88,6 @@ footer{
         padding-top: 0;
       } 
     @include media-mobile{
-        width: 100%;
         padding-top: 0;
         row-gap: 40px;
     }
@@ -103,10 +104,12 @@ footer{
     @include media-tablet{
         margin: 0 auto;
         padding-top: 6.5rem;
+        padding-left: 150px;
+        padding-right: 150px;
       } 
 }
 .footer_image{
-    background-image: url(../assets/images/footer-puppy.png);
+    background-image: url(../../assets/images/footer-puppy.png);
     background-size: cover;
     width: 300px;
     height: 310px;
