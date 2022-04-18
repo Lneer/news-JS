@@ -1,0 +1,34 @@
+.header{  
+    width: 100%;
+    max-width: $device-width;
+ 
+}
+    
+.header_abspos {
+    margin-top: 60px;
+  
+    @include media-tablet{
+        margin-top: 30px;
+    }
+    @include media-mobile{
+        margin-top: 30px;
+    }
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+}
+
+.header_fixpos {
+    padding: 30px 0 30px;
+    position: fixed;
+     background: $color-light-xl;
+}
+
+.header__conteiner{
+    display: flex;
+    justify-content: space-between;
+    @include media-mobile{
+        width: calc(100vw - 63px);
+    }
+}
+

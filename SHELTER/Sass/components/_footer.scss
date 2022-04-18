@@ -1,0 +1,126 @@
+/**Footer**/
+footer{
+    width: 100%;
+    height: 350px;
+    @include media-tablet{
+        height: auto;
+      }
+    @include media-mobile{
+        height: auto;
+        
+    }
+    background-image: radial-gradient(
+        100% 215.42% at 0% 0%,
+        #5b483a 0%,
+        #262425 100%
+      );
+}
+.footer_conteiner{
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    @include media-tablet{
+        padding-top: 30px;
+        padding-left: 34px;
+        padding-right: 34px;
+        flex-wrap: wrap;
+        column-gap: 42px;
+      } 
+    @include media-mobile{
+        padding-top: 28px;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 40px;
+    }
+    width: auto;
+    height: auto;
+
+    :nth-child(3){
+        @include media-tablet{
+            flex-grow: 1fr;
+          } 
+    }
+}
+
+.foot_title{
+    color: #FFFFFF;
+    @include media-mobile{
+        width: calc(100% - 20px);
+        margin: 0 auto;
+    } 
+}
+.contacts{
+    @include media-tablet{
+        padding-top: 0;
+      } 
+    @include media-mobile{
+        padding-top: 0;
+        align-items: center;
+    } 
+    padding-top: 16px;
+    width: 279px;
+    display: flex;
+    flex-direction: column;
+    gap:40px;
+}
+.email_container{
+    display: flex;
+    gap:20px;
+    align-items: center;
+    text-decoration: none;
+}
+.email_image{
+    align-self: center;
+    display: block;
+}
+.email_text{
+    color: #F1CDB3;
+}
+.telephone_container{
+    display: flex;
+    gap:20px;
+    align-items: center;
+    text-decoration: none;
+}
+.adress{
+
+    @include media-tablet{
+        padding-top: 0;
+      } 
+    @include media-mobile{
+        padding-top: 0;
+        row-gap: 40px;
+    }
+    padding-top: 16px;
+    width: 302px;
+    display: flex;
+    flex-direction: column;
+    gap:33px;
+
+    
+}
+
+.footer_image_container{
+    @include media-tablet{
+        margin: 0 auto;
+        padding-top: 6.5rem;
+        padding-left: 150px;
+        padding-right: 150px;
+      } 
+}
+.footer_image{
+    background-image: url(../../assets/images/footer-puppy.png);
+    background-size: cover;
+    width: 300px;
+    height: 310px;
+    font-size: 0;
+    @include media-mobile{
+        width: 81.25vw;
+        height: 269px;
+        max-width: 300px;
+        padding-top: 0;
+        justify-self: center;
+
+    }
+    
+}

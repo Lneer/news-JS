@@ -1,0 +1,27 @@
+.all-pets-album {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 435px 435px;
+    grid-gap: 30px 40px;
+    :nth-child(n + 7){
+        @include media-tablet{
+            display: none;
+        }
+    }
+    :nth-child(n + 4){
+        @include media-mobile{
+            display: none;
+        }
+    }
+
+    @include media-tablet{
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(3, 435px);
+        grid-gap: 30px 40px;
+    }
+    @include media-mobile{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 435px);
+        grid-gap: 30px 40px;
+    }
+}      

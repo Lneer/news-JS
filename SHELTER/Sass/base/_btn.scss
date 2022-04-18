@@ -1,0 +1,64 @@
+.btn {
+    width: 207px;
+    height: 52px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    @extend %font-title ;
+    @include font (1.7rem,130%);
+    color: $color-dark-3xl;
+    text-align: center;
+    background-color: $color-primary;
+    border-radius: 100px;
+    text-decoration: none; 
+    &:hover {
+        background-color: $color-primary-light;
+    }
+    
+}
+.large{width: 260px}
+.btn_reverse{  
+    width: 187px;
+    height: 52px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    @extend %font-title ;
+    @include font (1.7rem,130%);
+    color: $color-dark-3xl;
+    text-align: center;
+    border: 2px solid $color-primary;
+    background-color: $color-light-s;
+    border-radius: 100px;
+    text-decoration: none; 
+
+    &:hover{
+        background-color: $color-primary;
+    }
+}
+.round-btn{
+    background-color:$color-light-s;
+    display: inline-flex;
+    width: 52px;
+    height: 52px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    border: 2px solid $color-primary;
+    @extend %transition;
+    &:enabled:hover{  
+
+        background-color:$color-primary ;
+        cursor: pointer;    
+    }
+    &:disabled{
+        border: 2px solid $color-dark-s;
+    }
+    :enabled{
+        border: 2px solid $color-primary;
+    }
+}
+.count{
+    background-color: $color-primary;
+    border: 2px solid $color-primary !important;
+}

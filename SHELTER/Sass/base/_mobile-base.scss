@@ -1,0 +1,8 @@
+.mobile-text_title{
+    @include media-mobile{
+        text-align: center;
+        font-family: 'Georgia';
+        @include font(2.5rem, 130%);
+        
+    }
+}

@@ -1,0 +1,24 @@
+.burger {
+    width: 3.0rem;
+    height: 2.2rem;
+    font-size: 0;
+    background-image: url(../../assets/icons/Burger.svg);
+    display: none;
+
+    @include media-mobile{
+        display: flex;
+        align-self: center;
+    }
+}
+.pets-burger{
+    width: 3.0rem;
+    height: 2.2rem;
+    font-size: 0;
+    background-image: url(../../assets/icons/Pets-Burger.svg);
+    display: none;
+
+    @include media-mobile{
+        display: flex;
+        align-self: center;
+    }
+}

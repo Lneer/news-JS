@@ -1,0 +1,12 @@
+.tablet_space {
+    @include media-mobile{
+        display: none;
+    }  
+}
+
+.mobile_space {
+    display: none;
+    @include media-mobile{
+        display: inline-block;
+    } 
+}

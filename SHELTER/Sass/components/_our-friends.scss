@@ -1,0 +1,104 @@
+.our-friends {
+    width: 100%;
+    height: 877px;
+    background: $color-light-l;
+    @include media-mobile{
+        height: auto;
+        padding-bottom: 42px;
+    }
+    
+}
+.our-friends__conteiner{
+    
+    @extend %top-space;
+    @include media-mobile{
+        padding-top: 42px;
+        gap: 42px;
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+.pet-page{
+    background: $color-light-l;
+    width: 100%;
+    height: auto;
+}
+.pets-page_modify{
+padding-top: 200px;
+padding-bottom: 100px;
+@include media-tablet{
+    padding-top: 200px;
+    padding-bottom: 76px;
+    gap: 30px
+}
+@include media-mobile{
+    padding-top: 162px;
+    padding-bottom: 42px;
+    gap: 42px
+}
+}
+.our-friends-heading {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.our-friends__slicer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:53px;
+    @include media-tablet{
+        gap:1.56vw ;
+    }
+    @include media-mobile{
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: 20px;
+        column-gap: 25vw;
+    }
+    :not(:nth-child(2)){
+        @include media-mobile{
+            order: 5;
+        }
+    }  
+    
+}
+.pets__album {
+    display: flex;
+    justify-content: space-between;
+    gap: 90px;
+    @include media-tablet{
+        gap:5.21vw ;
+    }
+    @include media-mobile{
+        padding-left: calc((100vw - 270px) / 2);
+        padding-right:calc((100vw - 270px) / 2);
+    }
+    >:nth-child(n + 3){
+        @include media-tablet{
+        display: none;
+        }
+    }
+    >:nth-child(n + 2){
+        @include media-mobile{
+        display: none;
+        }
+    }
+}
+
+.album_scroll{
+    display: flex;
+    padding-top: 10px;
+    width: auto;
+    justify-content: space-between;
+    column-gap: 20px;
+    @include media-mobile{
+        column-gap: 10px;
+        padding-top: 0px;
+    }
+}
