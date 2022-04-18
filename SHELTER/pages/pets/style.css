@@ -993,13 +993,18 @@ h5 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-top: 10px;
   width: auto;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-column-gap: 20px;
           column-gap: 20px;
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .album_scroll {
+    padding-top: 10px;
+  }
 }
 
 @media (min-width: 300px) and (max-width: 767px) {
