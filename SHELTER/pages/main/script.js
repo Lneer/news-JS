@@ -113,11 +113,11 @@ function CardSet(){
         };
         randomArr.length = 0;
 };
-//CardSet();
+CardSet();
 
-//LEFTBTN.addEventListener("click", CardSet())
+LEFTBTN.addEventListener("click",()=>{CardSet()})
 
-//RIGHTBTN.addEventListener("click", CardSet() )
+RIGHTBTN.addEventListener("click", ()=>{CardSet() })
 
 
    
