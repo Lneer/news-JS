@@ -1,0 +1,13 @@
+.scroll-off{
+    width: 100vw;
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+.smog {
+    width: 100vw;
+    height: 100vh;
+    background:rgba(41, 41, 41, 0.6);
+    position: absolute;
+    z-index: 50;
+}

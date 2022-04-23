@@ -27,6 +27,20 @@ h1, .logo_title, h2, h3, h4, h5, .btn, .btn_reverse, .card__description {
   font-style: normal;
 }
 
+.scroll-off {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.smog {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(41, 41, 41, 0.6);
+  position: absolute;
+  z-index: 50;
+}
+
 html {
   font-size: 10px;
 }
@@ -574,6 +588,7 @@ h5 {
   position: fixed;
   top: 0;
   right: -320px;
+  z-index: 70;
 }
 
 .aside__wrapper {
@@ -654,6 +669,57 @@ h5 {
   -webkit-animation: aside_slide .5s linear;
           animation: aside_slide .5s linear;
   animation-direction: reverse;
+}
+
+.caorusel__wrapper {
+  width: 990px;
+  overflow: hidden;
+}
+
+@-webkit-keyframes moveleft {
+  from {
+    left: 0;
+  }
+  to {
+    left: -360px;
+  }
+}
+
+@keyframes moveleft {
+  from {
+    left: 0;
+  }
+  to {
+    left: -360px;
+  }
+}
+
+.moveleft {
+  -webkit-animation: moveleft 2s linear;
+          animation: moveleft 2s linear;
+}
+
+@-webkit-keyframes moveright {
+  from {
+    left: 0;
+  }
+  to {
+    left: 360px;
+  }
+}
+
+@keyframes moveright {
+  from {
+    left: 0;
+  }
+  to {
+    left: 360px;
+  }
+}
+
+.moveright {
+  -webkit-animation: moveright 2s linear;
+          animation: moveright 2s linear;
 }
 
 .navigation {
@@ -1065,6 +1131,7 @@ h5 {
 }
 
 .pets__album {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

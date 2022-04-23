@@ -1018,6 +1018,7 @@ h5 {
 }
 
 .pets__album {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

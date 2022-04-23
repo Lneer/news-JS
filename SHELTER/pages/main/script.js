@@ -89,24 +89,33 @@ const petsBase = [
     }
   ];
 
-
 //Burger
 const BURGERBTN = document.querySelector("#burger");
 const ASIDE = document.querySelector("#aside");
 const LOGO = document.querySelector("#\\#logo");
+const MAIN =document.querySelector("body > main");
+const BODY = document.querySelector("body");
+const SMOG = document.querySelector("#smog");
 
 function burgerClick () { 
   if (BURGERBTN.classList.contains("burger_normal-pos")) {SideMenuAdd()}
-    else {SideMenuRemove()} 
-  ASIDE.addEventListener("click", SideMenuRemove);
-  document.querySelector("body > main").addEventListener("click", SideMenuRemove);
-
+  else {SideMenuRemove()} 
 }
+
+function LogoStylizer(copacity,cvisibility,ctime_transmition) {
+  LOGO.style.opacity = `${copacity}`;
+  LOGO.style.visibility = `${cvisibility}`;
+  LOGO.style.transition = `opacity ${ctime_transmition}s`;
+}
+
 function SideMenuAdd() {
-      LOGO.style.opacity = "0";
-      LOGO.style.transition = "opacity 0.2s";
+      LogoStylizer (0, "hidden", 0.2)
+      SmogSwitcher("block");
       BURGERBTN.classList.add("burger_direct-rotate")
       ASIDE.classList.add ("aside_direct-slide")
+      BODY.classList.add("scroll-off")
+      ASIDE.addEventListener("click", SideMenuRemove);
+      MAIN.addEventListener("click", SideMenuRemove);
       BURGERBTN.addEventListener ("animationend", () => {
         BURGERBTN.classList.remove("burger_normal-pos")
         ASIDE.classList.remove("aside_normal-pos")
@@ -115,12 +124,16 @@ function SideMenuAdd() {
         BURGERBTN.classList.remove("burger_direct-rotate")
         ASIDE.classList.remove("aside_direct-slide")
       })    
-  }
+}
+
 function SideMenuRemove() {
-      LOGO.style.opacity = "100";
-      LOGO.style.transition = "opacity 1s";
-      BURGERBTN.classList.add("burger_reverse-rotate")
-      ASIDE.classList.add("aside_reverse-slide")
+      LogoStylizer (100, "visible", 1);
+      SmogSwitcher("none");
+      BURGERBTN.classList.add("burger_reverse-rotate");
+      ASIDE.classList.add("aside_reverse-slide");
+      BODY.classList.remove("scroll-off");
+      ASIDE.removeEventListener("click", SideMenuRemove);
+      MAIN.removeEventListener("click", SideMenuRemove);
       BURGERBTN.addEventListener ("animationend", () => {
         BURGERBTN.classList.remove("burger_active-pos")
         ASIDE.classList.remove("aside_active-pos")
@@ -128,37 +141,107 @@ function SideMenuRemove() {
         ASIDE.classList.add("aside_normal-pos")
         BURGERBTN.classList.remove("burger_reverse-rotate")
         ASIDE.classList.remove("aside_reverse-slide")
-})
-  }
+      })
+}
+
+function SmogSwitcher(state) {SMOG.style.display = `${state}`}
+
 BURGERBTN.addEventListener ("click", burgerClick)
+
 
 //SLAIDER
 
-  const PETSALBUM = document.querySelectorAll("#pets-card");
+  const PETSALBUM = document.querySelector("#pets__album");
   const RIGHTBTN = document.querySelector("#btn-right");
   const LEFTBTN = document.querySelector("#btn-left");
   let cardName = document.querySelector("#card__description");
   let cardImg = document.querySelector("#pets-card > div.card__background > img");
   const randomArr =[];
+  let elem;
   
-function CardSet(){
+
+function CardSet(currentElem,randomArr){
         let PetInBase = Math.floor(7 * Math.random());
         while (randomArr.indexOf(PetInBase) !== -1){
             PetInBase = Math.floor(7 * Math.random());
         }
         randomArr.push(PetInBase);
-        cardName.textContent = petsBase[PetInBase].name;
-        cardImg.setAttribute("Src",petsBase[PetInBase].img);
-        cardImg.setAttribute("Alt",petsBase[PetInBase].name);
-      
-        randomArr.length = 0;
+        currentElem.children[1].children[0].textContent = petsBase[PetInBase].name;
+        currentElem.children[0].children[0].setAttribute("Src",petsBase[PetInBase].img);
+        currentElem.children[0].children[0].setAttribute("Alt",petsBase[PetInBase].name); 
+    return(currentElem)
+}
+
+/*function CardSet(cldnum, randomArr){
+        let PetInBase = Math.floor(7 * Math.random());
+        while (randomArr.indexOf(PetInBase) !== -1){
+            PetInBase = Math.floor(7 * Math.random());
+        }
+        randomArr.push(PetInBase);
+
+        PETSALBUM.children[cldnum].children[1].children[0].textContent = petsBase[PetInBase].name;
+        PETSALBUM.children[cldnum].children[0].children[0].setAttribute("Src",petsBase[PetInBase].img);
+        PETSALBUM.children[cldnum].children[0].children[0].setAttribute("Alt",petsBase[PetInBase].name);     
 };
+*/
 
-PETSALBUM.forEach(CardSet)   ;
 
-LEFTBTN.addEventListener("click", CardSet)
 
-RIGHTBTN.addEventListener("click", CardSet)
+for (let i = 0; i < PETSALBUM.childElementCount ; i++){
+  elem = PETSALBUM.children[i]
+  elem = CardSet(elem,randomArr)
+}
+
+function copyCard(direction , cardCount){
+  if(direction==="left") {
+    for (let i=0; i<cardCount; i++){
+      let elem = PETSALBUM.firstElementChild.cloneNode(true)
+      elem = CardSet(elem,randomArr)
+      PETSALBUM.append(elem)
+    }
+  }
+  else if(direction==="right"){
+    for (let i=0; i<cardCount; i++){
+      let elem = PETSALBUM.lastElementChild.cloneNode(true)
+      elem = CardSet(elem,randomArr)
+      PETSALBUM.prepend(elem)
+    }
+  }
+}
+
+function deleteCard(direction , cardCount){
+  if(direction==="left") {
+    for (let i=0; i<cardCount; i++){
+      PETSALBUM.firstElementChild.remove()
+    }
+  }
+  else if(direction==="right"){
+    for (let i=0; i<cardCount; i++){
+      PETSALBUM.lastElementChild.remove()
+    }
+  }
+}
+
+
+function pickLeft(){
+  copyCard("left",1)
+  PETSALBUM.classList.add("moveleft")
+  PETSALBUM.addEventListener("animationend", () =>{PETSALBUM.classList.remove("moveleft") 
+  deleteCard("left",1)
+})
+}
+
+function pickRight(){
+  copyCard("right" , 1)
+  PETSALBUM.classList.add("moveright")
+  PETSALBUM.addEventListener("animationend", () =>{PETSALBUM.classList.remove("moveright")
+  deleteCard("right" , 1) 
+})
+}
+
+LEFTBTN.addEventListener("click", pickLeft)
+
+RIGHTBTN.addEventListener("click", pickRight)
 
 
    

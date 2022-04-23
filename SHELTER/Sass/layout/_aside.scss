@@ -5,6 +5,7 @@
     position: fixed;
     top:0;
     right: -320px;
+    z-index: 70;
 }
 
 
@@ -54,3 +55,4 @@
     animation: aside_slide .5s linear ;
     animation-direction: reverse;
 }
+

@@ -1,0 +1,19 @@
+.caorusel__wrapper {
+    width: 990px;
+    overflow: hidden;
+}
+@keyframes moveleft {
+    from{left: 0} ;
+    to{left: -360px }
+}
+.moveleft{
+    animation: moveleft 2s linear;
+}
+
+@keyframes moveright {
+    from{left: 0} ;
+    to{left: 360px }
+}
+.moveright{
+    animation: moveright 2s linear;
+}
