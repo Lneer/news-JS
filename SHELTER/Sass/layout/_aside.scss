@@ -1,0 +1,56 @@
+.aside{
+    width: 320px;
+    height: 100vh;
+    background: $color-dark-3xl;
+    position: fixed;
+    top:0;
+    right: -320px;
+}
+
+
+.aside__wrapper{
+    width: 300px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.aside__header{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    @include media-mobile{
+        width: calc(320px - 63px);
+    }
+}
+.aside__navigation{
+    margin: 0 auto;
+    width: 243px !important;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 40px;
+    align-items: center;
+    margin-top: 158px !important;
+}
+
+.aside_normal-pos{
+    right: -320px;
+}
+
+.aside_active-pos{
+    right: 0;
+}
+
+@keyframes aside_slide{
+    from {right: -320px}
+    to {right: 0}
+}
+.aside_direct-slide {
+    animation: aside_slide .5s linear ;
+}
+
+.aside_reverse-slide{
+    animation: aside_slide .5s linear ;
+    animation-direction: reverse;
+}

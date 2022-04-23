@@ -4,12 +4,14 @@
     display: flex;
     justify-content: space-between;
     align-self:flex-start;
-    @include media-mobile{
-       display: none;
-    }
 }
-
-.nav__link {  
+.navigation__media{
+    @include media-mobile{
+        display: none;
+     }
+}
+.nav__link { 
+    width: fit-content; 
     text-decoration: none;
     border-bottom: 0px solid #F1CDB3;
     @extend %transition;

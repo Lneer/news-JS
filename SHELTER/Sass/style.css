@@ -1,4 +1,4 @@
-.round-btn, .nav__link {
+.round-btn, .logo, .nav__link {
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
 }
@@ -7,7 +7,7 @@ h1, .logo_title, h2, h3, h4, h5, .btn, .btn_reverse, .card__description {
   font-family: "Georgia";
 }
 
-.logo_subtitle, .paragraph_l, .donation_text {
+.logo_subtitle, .paragraph_l, .paragraph-mobile-menu, .donation_text {
   font-family: "Arial";
 }
 
@@ -107,6 +107,22 @@ h5 {
 
 .paragraph_l {
   font-size: 1.5rem;
+  line-height: 160%;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.paragraph_l {
+  font-size: 1.5rem;
+  line-height: 160%;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.paragraph-mobile-menu {
+  font-size: 3.2rem;
   line-height: 160%;
   font-style: normal;
   font-weight: 400;
@@ -415,6 +431,49 @@ h5 {
   }
 }
 
+.burger_normal-pos {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.burger_active-pos {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+@-webkit-keyframes burger_rot {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+  }
+}
+
+@keyframes burger_rot {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+  }
+}
+
+.burger_direct-rotate {
+  -webkit-animation: burger_rot .5s linear;
+          animation: burger_rot .5s linear;
+}
+
+.burger_reverse-rotate {
+  -webkit-animation: burger_rot .5s linear;
+          animation: burger_rot .5s linear;
+  animation-direction: reverse;
+}
+
 @media (min-width: 300px) and (max-width: 767px) {
   .tablet_space {
     display: none;
@@ -446,6 +505,7 @@ h5 {
 .wrapper {
   max-width: calc(100% - 80px);
   margin: 0 auto;
+  overflow: hidden;
 }
 
 @media (min-width: 768px) and (max-width: 1279px) {
@@ -521,12 +581,15 @@ h5 {
 }
 
 @media (min-width: 300px) and (max-width: 767px) {
-  .navigation {
+  .navigation__media {
     display: none;
   }
 }
 
 .nav__link {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   text-decoration: none;
   border-bottom: 0px solid #F1CDB3;
 }
@@ -1302,7 +1365,7 @@ footer {
 }
 
 .foot_title {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 @media (min-width: 300px) and (max-width: 767px) {

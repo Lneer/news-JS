@@ -88,36 +88,77 @@ const petsBase = [
       "parasites": ["lice", "fleas"]
     }
   ];
+
+
+//Burger
+const BURGERBTN = document.querySelector("#burger");
+const ASIDE = document.querySelector("#aside");
+const LOGO = document.querySelector("#\\#logo");
+
+function burgerClick () { 
+  if (BURGERBTN.classList.contains("burger_normal-pos")) {SideMenuAdd()}
+    else {SideMenuRemove()} 
+  ASIDE.addEventListener("click", SideMenuRemove);
+  document.querySelector("body > main").addEventListener("click", SideMenuRemove);
+
+}
+function SideMenuAdd() {
+      LOGO.style.opacity = "0";
+      LOGO.style.transition = "opacity 0.2s";
+      BURGERBTN.classList.add("burger_direct-rotate")
+      ASIDE.classList.add ("aside_direct-slide")
+      BURGERBTN.addEventListener ("animationend", () => {
+        BURGERBTN.classList.remove("burger_normal-pos")
+        ASIDE.classList.remove("aside_normal-pos")
+        BURGERBTN.classList.add("burger_active-pos")
+        ASIDE.classList.add("aside_active-pos")
+        BURGERBTN.classList.remove("burger_direct-rotate")
+        ASIDE.classList.remove("aside_direct-slide")
+      })    
+  }
+function SideMenuRemove() {
+      LOGO.style.opacity = "100";
+      LOGO.style.transition = "opacity 1s";
+      BURGERBTN.classList.add("burger_reverse-rotate")
+      ASIDE.classList.add("aside_reverse-slide")
+      BURGERBTN.addEventListener ("animationend", () => {
+        BURGERBTN.classList.remove("burger_active-pos")
+        ASIDE.classList.remove("aside_active-pos")
+        BURGERBTN.classList.add("burger_normal-pos")
+        ASIDE.classList.add("aside_normal-pos")
+        BURGERBTN.classList.remove("burger_reverse-rotate")
+        ASIDE.classList.remove("aside_reverse-slide")
+})
+  }
+BURGERBTN.addEventListener ("click", burgerClick)
+
+//SLAIDER
+
   const PETSALBUM = document.querySelectorAll("#pets-card");
   const RIGHTBTN = document.querySelector("#btn-right");
   const LEFTBTN = document.querySelector("#btn-left");
-  let cardImg;
-  let cardName;
+  let cardName = document.querySelector("#card__description");
+  let cardImg = document.querySelector("#pets-card > div.card__background > img");
   const randomArr =[];
   
 function CardSet(){
-    for (let i = 0; i < PETSALBUM.length; i++) {
         let PetInBase = Math.floor(7 * Math.random());
-
         while (randomArr.indexOf(PetInBase) !== -1){
             PetInBase = Math.floor(7 * Math.random());
         }
-
         randomArr.push(PetInBase);
-
-        cardName = document.querySelectorAll("#pets-card")[i].children[1].children[0];
-        cardImg = document.querySelectorAll("#pets-card")[i].childNodes[1].childNodes[1];
         cardName.textContent = petsBase[PetInBase].name;
         cardImg.setAttribute("Src",petsBase[PetInBase].img);
         cardImg.setAttribute("Alt",petsBase[PetInBase].name);
-        };
+      
         randomArr.length = 0;
 };
-CardSet();
 
-LEFTBTN.addEventListener("click",()=>{CardSet()})
+PETSALBUM.forEach(CardSet)   ;
 
-RIGHTBTN.addEventListener("click", ()=>{CardSet() })
+LEFTBTN.addEventListener("click", CardSet)
+
+RIGHTBTN.addEventListener("click", CardSet)
 
 
    
