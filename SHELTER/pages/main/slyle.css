@@ -681,7 +681,7 @@ h5 {
     left: 0;
   }
   to {
-    left: -360px;
+    left: calc(3 * -360px);
   }
 }
 
@@ -690,7 +690,7 @@ h5 {
     left: 0;
   }
   to {
-    left: -360px;
+    left: calc(3 * -360px);
   }
 }
 
@@ -701,19 +701,19 @@ h5 {
 
 @-webkit-keyframes moveright {
   from {
-    left: 0;
+    right: 0;
   }
   to {
-    left: 360px;
+    right: -360px;
   }
 }
 
 @keyframes moveright {
   from {
-    left: 0;
+    right: 0;
   }
   to {
-    left: 360px;
+    right: -360px;
   }
 }
 

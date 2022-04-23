@@ -4,15 +4,15 @@
 }
 @keyframes moveleft {
     from{left: 0} ;
-    to{left: -360px }
+    to{left: calc(3 * -360px) }
 }
 .moveleft{
     animation: moveleft 2s linear;
 }
 
 @keyframes moveright {
-    from{left: 0} ;
-    to{left: 360px }
+    from{right: 0} ;
+    to{right: -360px }
 }
 .moveright{
     animation: moveright 2s linear;
