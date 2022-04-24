@@ -56,10 +56,11 @@ padding-bottom: 100px;
         gap:1.56vw ;
     }
     @include media-mobile{
+        width: 270px;
         flex-wrap: wrap;
         justify-content: center;
         row-gap: 20px;
-        column-gap: 25vw;
+        column-gap: 80px;
     }
     :not(:nth-child(2)){
         @include media-mobile{
@@ -68,17 +69,43 @@ padding-bottom: 100px;
     }  
     
 }
-.pets__album {
+.spacer{
+    width: 990px;
+    @include media-tablet{
+        width: $tablet-carosel-width ;
+    }
+    @include media-mobile{
+        width: $pet-card-width;
+    }
+
+}
+.pets__album{
+    display: flex;
     position: relative;
+    left:-990px;
+    @include media-tablet{
+        left: -$tablet-carosel-width ;
+    }
+    @include media-mobile{
+        flex-direction: row;
+        left: -270px ; 
+    }
+    >:first-child{
+        @include media-mobile{
+            order: 0; 
+        }
+    }
+}
+.slide{
+    width: 990px;
     display: flex;
     justify-content: space-between;
     gap: 90px;
     @include media-tablet{
-        gap:5.21vw ;
+        gap:40px ;
     }
     @include media-mobile{
-        padding-left: calc((85vw - 270px) / 2);
-        padding-right:calc((85vw - 270px) / 2);
+        gap: 0px;
     }
     >:nth-child(n + 3){
         @include media-tablet{

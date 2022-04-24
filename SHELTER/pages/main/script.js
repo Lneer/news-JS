@@ -152,14 +152,26 @@ BURGERBTN.addEventListener ("click", burgerClick)
 //SLAIDER
 
   let PETSALBUM = document.querySelector("#pets__album");
+  const ITEM_ACTIVE = document.querySelector("#active-slide");
+  const ITEM_LEFT = document.querySelector("#right-slide");
+  const ITEM_RIGHT = document.querySelector("#left-slide");
   const RIGHTBTN = document.querySelector("#btn-right");
   const LEFTBTN = document.querySelector("#btn-left");
   let cardName = document.querySelector("#card__description");
   let cardImg = document.querySelector("#pets-card > div.card__background > img");
+  let ScreenWight = document.body.clientWidth;
+  let petsGenerationNum;
   let randomArr = [];
   let previousArr =[];
-  let elem;
   
+if(ScreenWight>=1280){
+  petsGenerationNum = 3;
+}
+else if(ScreenWight>=768){
+  petsGenerationNum = 2;
+} else if(ScreenWight>=320){
+  petsGenerationNum = 1;
+}
 
 function CardSet(currentElem,randomArr){
         let PetInBase = Math.floor(7 * Math.random());
@@ -170,76 +182,60 @@ function CardSet(currentElem,randomArr){
         currentElem.children[1].children[0].textContent = petsBase[PetInBase].name;
         currentElem.children[0].children[0].setAttribute("Src",petsBase[PetInBase].img);
         currentElem.children[0].children[0].setAttribute("Alt",petsBase[PetInBase].name); 
+
     return(currentElem)
 }
 
-for (let i = 0; i < PETSALBUM.childElementCount ; i++){
-  elem = PETSALBUM.children[i]
-  elem = CardSet(elem,randomArr)
+function CreateRandomTemplate (elemcount, targetParant) {
+  let card = document.createElement("div");
+  let elem = ITEM_ACTIVE.firstElementChild.cloneNode(true);
+  targetParant.innerHTML ="";
+  targetParant.innerHTML = card.innerHTML;
+  for (let i = 0; i < elemcount; i++ ) {
+    elem = CardSet(elem,randomArr)
+    card.append(elem);
+    targetParant.innerHTML += card.innerHTML;
+  }
+  return (targetParant)
 }
 
+CreateRandomTemplate( petsGenerationNum, ITEM_ACTIVE)
 previousArr = randomArr.slice(0,randomArr.length)
 randomArr.length = 0
 
-function copyCard(direction , cardCount){
-  if(direction==="left") {
-    for (let i=0; i<cardCount; i++){
-      let elem = PETSALBUM.firstElementChild.cloneNode(true)
-      elem = CardSet(elem,randomArr)
-      PETSALBUM.append(elem)
-    }
-    previousArr = randomArr.slice(0,randomArr.length)
-    randomArr.length = 0
-  }
-  else if(direction==="right") {
-    for (let i=0; i<cardCount; i++){
-      let elem = PETSALBUM.lastElementChild.cloneNode(true)
-      elem = CardSet(elem,randomArr)
-      PETSALBUM.prepend(elem)
-    }
-  }
+
+function pushLeft(){
+  CreateRandomTemplate (petsGenerationNum, ITEM_LEFT);
+  previousArr = randomArr.slice(0,randomArr.length);
+  randomArr.length = 0;
+  PETSALBUM.classList.add("moveleft");
+  LEFTBTN.removeEventListener("click", pushLeft);
+  RIGHTBTN.removeEventListener("click", pushRight);
 }
 
-function deleteCard(direction , cardCount){
-  if(direction==="left") {
+function pushRight(){
+  CreateRandomTemplate (petsGenerationNum, ITEM_RIGHT);
+  previousArr = randomArr.slice(0,randomArr.length)
+  randomArr.length = 0;
+  PETSALBUM.classList.add("moveright");
+  LEFTBTN.removeEventListener("click", pushLeft);
+  RIGHTBTN.removeEventListener("click", pushRight);
+}
+
+LEFTBTN.addEventListener("click", pushLeft)
+RIGHTBTN.addEventListener("click", pushRight)
+
+PETSALBUM.addEventListener("animationend",(animationEvent) => {
+  if (animationEvent.animationName === "moveleft"){
     
-    for (let i=0; i < cardCount; i++){
-      PETSALBUM.removeChild(PETSALBUM.firstElementChild);
-    }
+    PETSALBUM.classList.remove("moveleft");
+    ITEM_ACTIVE.innerHTML = ITEM_LEFT.innerHTML ;
   }
-  else if(direction==="right"){
-    for (let i=0; i<cardCount; i++){
-      let elem = PETSALBUM.lastElementChild
-      elem.removeChild();
-    }
+  else if (animationEvent.animationName === "moveright") {
+    PETSALBUM.classList.remove("moveright") ;
+    ITEM_ACTIVE.innerHTML = ITEM_RIGHT.innerHTML; 
   }
-}
 
-function leftactions(){
-  PETSALBUM.classList.remove("moveleft") 
-  deleteCard("left",3)
-}
-
-function pickLeft(){
-  PETSALBUM.removeEventListener("animationend",leftactions )
-  copyCard("left",3)
-  PETSALBUM.classList.add("moveleft")
-  PETSALBUM.addEventListener("animationend",leftactions )
-
-}
-
-function pickRight(){
-  copyCard("right" , 1)
-  PETSALBUM.classList.add("moveright")
-  PETSALBUM.addEventListener("animationend", () =>{PETSALBUM.classList.remove("moveright")
-  deleteCard("right",1) 
+  LEFTBTN.addEventListener("click", pushLeft)
+  RIGHTBTN.addEventListener("click", pushRight)
 })
-}
-
-LEFTBTN.addEventListener("click", pickLeft)
-
-RIGHTBTN.addEventListener("click", pickRight)
-
-
-   
- 

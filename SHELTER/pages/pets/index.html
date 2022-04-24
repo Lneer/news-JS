@@ -45,7 +45,7 @@
                 <div class="our-friends-heading color-dark-l">
                     <h3 class="mobile-text_title">Our friends who<br>are looking for a house</h3>
                 </div>
-                <div class="all-pets-album">
+                <div class="all-pets-album " id="paginationAlbum">
                     <div class="pets-card Katrine">
                         <div class= "card__background">
                             <img src="../../assets/images/pets-katrine.png" alt="Katrine">
@@ -121,19 +121,19 @@
                 </div>
 
                 <div class="album_scroll">
-                    <button class="round-btn" disabled>
+                    <button class="round-btn" id ="max-back" disabled>
                         <h4 class="color-dark-s">&lt&lt</h4>
                     </button>
-                    <button class="round-btn" disabled>
+                    <button class="round-btn" id ="step-back" disabled>
                         <h4 class="color-dark-s">&lt</h4>
                     </button>
-                    <button class="round-btn count" disabled>
-                        <h4 class="color-dark-3xl">1</h4>
+                    <button class="round-btn count"  disabled>
+                        <h4 class="color-dark-3xl" id="page-view">1</h4>
                     </button>
-                    <button class="round-btn" enabled>
-                        <h4 class="color-dark-3xl">&gt</h4>
+                    <button class="round-btn" id ="step-direct">
+                        <h4 class="color-dark-3xl" >&gt </h4>
                     </button>
-                    <button class="round-btn" enabled>
+                    <button class="round-btn" id ="max-direct" >
                         <h4 class="color-dark-3xl">&gt&gt</h4>
                     </button>
 
@@ -180,4 +180,5 @@
 
     </footer>
 </body>
+<script src="script.js"></script>
 </html>

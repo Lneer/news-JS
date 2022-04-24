@@ -1,19 +1,55 @@
 .caorusel__wrapper {
     width: 990px;
+    margin: 0 auto;
     overflow: hidden;
+    @include media-tablet{
+        width: $tablet-carosel-width ;
+    }
+    @include media-mobile{
+        width: $pet-card-width;
+    }
+
 }
-@keyframes moveleft {
-    from{left: 0} ;
-    to{left: calc(3 * -360px) }
-}
+
 .moveleft{
+    @keyframes moveleft {
+        from {left: -990px;} 
+        to {left: -1980px;};
+    }
+    @include media-tablet{
+        @keyframes moveleft {
+            from {left: -580px }
+            to {left: -1160px }
+        }
+    }
+    @include media-mobile{
+        @keyframes moveleft {
+            from {left: -270px }
+            to {left: -540px }
+        }
+    }
     animation: moveleft 2s linear;
 }
 
-@keyframes moveright {
-    from{right: 0} ;
-    to{right: -360px }
-}
+
 .moveright{
+    @keyframes moveright {
+        from {left: -990px }
+        to {left: 0px }
+    }
+    @include media-tablet{
+        @keyframes moveright {
+            from {left: -580px }
+            to {left: 0px }
+        }
+    }
+    @include media-mobile{
+        @keyframes moveright {
+            from {left: -270px }
+            to {left: 0px }
+        }
+    }
+  
     animation: moveright 2s linear;
 }
+
