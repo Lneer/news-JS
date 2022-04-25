@@ -24,12 +24,13 @@
     <header class="header header_abspos">
         <div class="wrapper">
             <div class = header__conteiner>
-                <a class="logo" href="../../pages/main/index.html">
+                
+                <a class="logo" id="#logo" href="../../pages/main/index.html">
                     <h1 class = "logo_title title_color">Cozy House</h1>
                     <p class = "logo_subtitle subtitle_color">Shelter for pets in Boston</p>
                 </a>
-                <a class="burger" href="#"></a>
-                <nav class="navigation">
+                <a class="burger burger_normal-pos" id="burger" href="#"></a>
+                <nav class="navigation navigation__media">
                     <a class = "nav__link active paragraph_l color-dark-s" href ="#">About the shelter</a>
                     <a class = "nav__link   paragraph_l color-dark-s" href="../../pages/pets/index.html">Our pets</a>
                     <a class = "nav__link  paragraph_l color-dark-s" href="#help">Help the shelter</a>
@@ -40,6 +41,7 @@
         </div>
     </header>
     <main>
+        <div class="smog" id = "smog" style="display: none;"></div>
         <section class="start-screen">
             <div class="wrapper">
                <div class="start__container">
@@ -59,7 +61,25 @@
                </div>
             </div>
         </section>
-
+        <aside class="aside aside_normal-pos" id="aside">
+            <div class="aside__wrapper">
+                <div class="aside__container">
+                    <div class="aside__header">
+                        <a class="logo" href="../../pages/main/index.html">
+                            <h1 class = "logo_title title_color">Cozy House</h1>
+                            <p class = "logo_subtitle subtitle_color">Shelter for pets in Boston</p>
+                        </a>
+                    </div>
+                    <nav class="navigation aside__navigation">
+                    <a class = "nav__link active paragraph-mobile-menu color-dark-s" href ="#">About the shelter</a>
+                    <a class = "nav__link   paragraph-mobile-menu color-dark-s" href="../../pages/pets/index.html">Our pets</a>
+                    <a class = "nav__link  paragraph-mobile-menu color-dark-s" href="#help">Help the shelter</a>
+                    <a class = "nav__link  paragraph-mobile-menu color-dark-s" href="#footer_link">Contacts</a>
+                </nav>
+                    </nav>
+                </div>
+            </div>
+        </aside>
         <section class="about">
             <div class="wrapper">
                 <div class="about__conteiner about_position">
@@ -85,37 +105,43 @@
                         <h3 class="mobile-text_title color-dark-l">Our friends  who<br>are looking for a house</h3>
                     </div>
                     <div class="our-friends__slicer">
-                        <button class="round-btn" id="btn-right"><img src="../../assets/icons/Arrow_right.svg" alt="right"></button>
-                        <div class="pets__album" id="pets__album">
-                            <div class="pets-card" id="pets-card">
-                                <div class= "card__background">
-                                    <img src="../../assets/images/pets-katrine.png" alt="Katrine">
+                        <button class="round-btn" id="btn-left"><img src="../../assets/icons/Arrow_right.svg" alt="right"></button>
+                       <div class="caorusel__wrapper">
+                            <div class="pets__album" id="pets__album">
+                            <div class="slide" id ="left-slide" ><div class ="spacer"></div></div>
+                            <div class="slide" id = "active-slide">
+                                <div class="pets-card" id="pets-card">
+                                    <div class= "card__background">
+                                        <img src="../../assets/images/pets-katrine.png" alt="Katrine">
+                                    </div>
+                                    <div class="card__info">
+                                        <p class="card__description" id = "card__description">Katrine</p>
+                                        <a class ="card-btn_pos btn_reverse" href="#">Learn more</a>
+                                    </div>
                                 </div>
-                                <div class="card__info">
-                                    <p class="card__description" id = "card__description">Katrine</p>
-                                    <a class ="card-btn_pos btn_reverse" href="#">Learn more</a>
+                                <div class="pets-card" id="pets-card">
+                                    <div class= "card__background">
+                                        <img src="../../assets/images/pets-jennifer.png" alt="Jenifer">
+                                    </div>
+                                    <div class="card__info">
+                                        <p class="card__description" id = "card__description">Jennifer</p>
+                                        <a class ="btn_reverse card-btn_pos" href="#">Learn more</a>
+                                    </div>
+                                </div>
+                                <div class="pets-card" id="pets-card">
+                                    <div class= "card__background">
+                                        <img src="../../assets/images/pets-woody.png" alt="Woody">
+                                    </div>
+                                    <div class="card__info">
+                                        <p class="card__description" id = "card__description">Woody</p>
+                                        <a class ="card-btn_pos btn_reverse" href="#">Learn more</a>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="pets-card" id="pets-card">
-                                <div class= "card__background">
-                                    <img src="../../assets/images/pets-jennifer.png" alt="Jenifer">
-                                </div>
-                                <div class="card__info">
-                                    <p class="card__description" id = "card__description">Jennifer</p>
-                                    <a class ="btn_reverse card-btn_pos" href="#">Learn more</a>
-                                </div>
+                            <div class="slide" id ="right-slide" ><div class ="spacer"></div></div>
                             </div>
-                            <div class="pets-card" id="pets-card">
-                                <div class= "card__background">
-                                    <img src="../../assets/images/pets-woody.png" alt="Woody">
-                                </div>
-                                <div class="card__info">
-                                    <p class="card__description" id = "card__description">Woody</p>
-                                    <a class ="card-btn_pos btn_reverse" href="#">Learn more</a>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="round-btn" id="btn-left"><img src="../../assets/icons/Arrow_left.svg" alt="left"></button>
+                       </div>
+                        <button class="round-btn" id="btn-right"><img src="../../assets/icons/Arrow_left.svg" alt="left"></button>
                      </div>
                 
                     <div class="pets_get_know ">
@@ -200,8 +226,6 @@
                 </div>                   
             </div>
         </section>
-
-
         <section class="donation">
             <div class="wrapper">
                 <div class="donation_conteiner">
@@ -225,8 +249,6 @@
                 </div>
             </div>
         </section>
-
-
     </main>
     <footer>
         <a name="footer_link"></a>

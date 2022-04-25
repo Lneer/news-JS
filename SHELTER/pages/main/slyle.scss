@@ -3,6 +3,7 @@
 @import "../../Sass/abstract/placeholders";
 @import "../../Sass/abstract/mixins";
 @import "../../Sass/abstract/fonts";
+@import "../../Sass/abstract/modal-window";
 
 
 @import "../../Sass/base/base";
@@ -17,6 +18,8 @@
 
 @import "../../Sass/layout/wrapper";
 @import "../../Sass/layout/header";
+@import "../../Sass/layout/aside";
+@import "../../Sass/layout/caorusel";
 
 
 @import "../../Sass/components/navigation";

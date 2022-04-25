@@ -54,9 +54,6 @@
     &:disabled{
         border: 2px solid $color-dark-s;
     }
-    :enabled{
-        border: 2px solid $color-primary;
-    }
 }
 .count{
     background-color: $color-primary;

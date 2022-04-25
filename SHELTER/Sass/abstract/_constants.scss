@@ -9,6 +9,12 @@ $color-dark-s:          #CDCDCD;
 $color-light-s:         #FAFAFA;
 $color-light-l:         #F6F6F6;
 $color-light-xl:        #ffffff;
+$color-background:      radial-gradient(
+                        100% 215.42% at 0% 0%,
+                        #5b483a 0%,
+                        #262425 100%
+                        );
+
 
 $device-width :1280px;
 $content-width: calc(100% - 80px);
@@ -16,3 +22,9 @@ $device-tablet-width: 768px;
 $content-tablet-width: calc(100% - 60px);
 $device-mobile-width: 320px;
 $content-mobile-width: calc(100% - 20px);
+
+$pet-card-width :270px;
+$tablet-carosel-width:580px;
+$slider-tablet-gap  :5.21vw;
+
+$start-slider-animation-point: -990px;

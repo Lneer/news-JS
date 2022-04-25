@@ -9,11 +9,7 @@ footer{
         height: auto;
         
     }
-    background-image: radial-gradient(
-        100% 215.42% at 0% 0%,
-        #5b483a 0%,
-        #262425 100%
-      );
+    background-image: $color-background;
 }
 .footer_conteiner{
     padding-top: 40px;
@@ -43,7 +39,7 @@ footer{
 }
 
 .foot_title{
-    color: #FFFFFF;
+    color: $color-light-xl;
     @include media-mobile{
         width: calc(100% - 20px);
         margin: 0 auto;
@@ -74,7 +70,7 @@ footer{
     display: block;
 }
 .email_text{
-    color: #F1CDB3;
+    color: $color-primary;
 }
 .telephone_container{
     display: flex;
