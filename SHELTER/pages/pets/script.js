@@ -96,36 +96,58 @@ const petsBase = [
   const PAGE_VIEW=document.querySelector("#page-view");
   const STEP_DIRECT_BTN=document.querySelector("#step-direct");
   const MAX_DIRECT_BTN=document.querySelector("#max-direct");
-  let PetsArr =[];
-  let paginationList = {
-      1:[3,6,1,5,7,2,0,4],
-      2:[1,6,0,2,4,5,7,3],
-      3:[5,4,1,3,6,2,0,7],
-      4:[6,3,5,4,2,1,0,7],
-      5:[3,6,4,1,0,5,2,7],
-      6:[7,3,0,5,2,6,4,1],
+  let ScreenWight = document.body.clientWidth;
+  if(ScreenWight>=1280){
+    petsGenerationNum = 8;
   }
-function PetsListCreate(unicPetsNum, PetsListLength){
-    let resultArr=[];
-    let unicPetArr =[];
+  else if(ScreenWight>=768){
+    petsGenerationNum = 6;
+  } else if(ScreenWight>=320){
+    petsGenerationNum = 3;
+  }
 
-    for (i=0; resultArr.length < PetsListLength; i++) {
-        let n= Math.round(7 * Math.random());
-      
-        if(!unicPetArr.includes(n) && (unicPetArr.length < unicPetsNum)){
-            unicPetArr.push(n)
-            resultArr.push(n);
-            }
-        else if ((unicPetArr.length >= unicPetsNum)){
-            unicPetArr.length=0 ;
-            console.log(unicPetArr.length)
-            unicPetArr.push(n);
-            resultArr.push(n);
-            }
-        }
-    console.log(i)
-    return(resultArr)
+  let paginationList = PetsArrCreate(petsGenerationNum)
+function suffleArr(arrLength){
+    arr=[]
+    let n;
+    while(arr.length < arrLength){
+      n = Math.trunc(Math.random()*8)
+      if(!arr.includes(n)){
+         arr.push(n)
+         }
     }
+  return arr
+}
+
+function PetsArrCreate(PetsPerPage){
+  let pages =  Math.trunc(48 / PetsPerPage);
+  let book ={}
+  let PosiblePetsArr=[]
+  let buffArr =[]
+  for (let i=0; i<6 ; i++) {PosiblePetsArr = PosiblePetsArr.concat(suffleArr(8)) }
+  //console.log(PosiblePetsArr)
+  for(let i = 1; i <= pages; i++){
+   let PageIn=[] 
+   for(let j = 0; j<PetsPerPage; j++){
+     PosiblePetsArr = buffArr.concat(PosiblePetsArr)
+     buffArr =[]
+     for(let k = 0; k < PosiblePetsArr.length; k++){
+             if (!PageIn.includes(PosiblePetsArr[k])){
+                 PageIn[j] = PosiblePetsArr[k]
+                 PosiblePetsArr.splice(k,1)
+                 break
+                 }
+              else{
+                buffArr.push(PosiblePetsArr[k])
+                PosiblePetsArr.splice(k,1)
+              }
+        }
+           
+   }
+   book[i] = PageIn;
+ }
+  return(book)
+}
 
 function CheckDisableUp(currentPage){
     if (currentPage === Object.keys(paginationList).length) {
@@ -227,3 +249,5 @@ function PageDawn(){
   MAX_DIRECT_BTN.addEventListener("click",PageUpMax)
   STEP_BACK_BTN.addEventListener("click",PageDawn)
   MAX_BACK_BTN.addEventListener("click",PageDawnMax)
+
+
