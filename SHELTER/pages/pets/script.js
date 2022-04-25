@@ -136,7 +136,7 @@ function CheckDisableUp(currentPage){
         MAX_DIRECT_BTN.setAttribute("disabled",true) 
         MAX_DIRECT_BTN.firstElementChild.classList.remove("color-dark-3xl")
         MAX_DIRECT_BTN.firstElementChild.classList.add("color-dark-s")
-        MAX_DIRECT_BTN.removeListener("click",PageUpMax)   
+        MAX_DIRECT_BTN.removeEventListener("click",PageUpMax)   
     }
     else{
         STEP_DIRECT_BTN.removeAttribute("disabled")
@@ -193,37 +193,30 @@ function CreateRandomTemplate (paginationList, pageNum, targetParant) {
     }
     return (targetParant)
   } 
-
+function PaginationAction(paginationPage){
+  PAGE_VIEW.textContent = paginationPage;
+  CreateRandomTemplate(paginationList,paginationPage,ALBUM)
+  CheckDisableUp(paginationPage)
+  CheckDisableDawn(paginationPage)
+}
 function PageUp(){
         currentPage++ 
-        PAGE_VIEW.textContent = currentPage;
-        CreateRandomTemplate(paginationList,currentPage,ALBUM)
-        CheckDisableUp(currentPage)
-        CheckDisableDawn(currentPage)
+        PaginationAction(currentPage)
 }
 
 function PageUpMax(){
         currentPage = +(Object.keys(paginationList).length);
-        PAGE_VIEW.textContent = currentPage;
-        CreateRandomTemplate(paginationList,currentPage,ALBUM);
-        CheckDisableUp(currentPage);
-        CheckDisableDawn(currentPage);
+        PaginationAction(currentPage)
 }
 
 function PageDawnMax(){
         currentPage = 1 
-        PAGE_VIEW.textContent = currentPage;
-        CreateRandomTemplate(paginationList,currentPage,ALBUM)
-        CheckDisableUp(currentPage)
-    C   heckDisableDawn(currentPage)
+        PaginationAction(currentPage)
 }
 
 function PageDawn(){
         currentPage-- 
-        PAGE_VIEW.textContent = currentPage;
-        CreateRandomTemplate(paginationList,currentPage,ALBUM)
-        CheckDisableUp(currentPage)
-        CheckDisableDawn(currentPage)
+        PaginationAction(currentPage)
 }
 
   let currentPage = 1;
