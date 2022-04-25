@@ -198,14 +198,17 @@ function PageUp(){
         currentPage++ 
         PAGE_VIEW.textContent = currentPage;
         CreateRandomTemplate(paginationList,currentPage,ALBUM)
+        MAX_DIRECT_BTN.addEventListener("click",PageUpMax)
         CheckDisableUp(currentPage)
         CheckDisableDawn(currentPage)
 }
 
 function PageUpMax(){
+  
         currentPage = +(Object.keys(paginationList).length);
         PAGE_VIEW.textContent = currentPage;
         CreateRandomTemplate(paginationList,currentPage,ALBUM);
+        STEP_DIRECT_BTN.addEventListener("click",PageUp)
         CheckDisableUp(currentPage);
         CheckDisableDawn(currentPage);
 }
@@ -215,7 +218,7 @@ function PageDawnMax(){
         PAGE_VIEW.textContent = currentPage;
         CreateRandomTemplate(paginationList,currentPage,ALBUM)
         CheckDisableUp(currentPage)
-    C   heckDisableDawn(currentPage)
+        CheckDisableDawn(currentPage)
 }
 
 function PageDawn(){
@@ -227,7 +230,10 @@ function PageDawn(){
 }
 
   let currentPage = 1;
+  PAGE_VIEW.textContent = currentPage;
   CreateRandomTemplate(paginationList,currentPage,ALBUM)
+  CheckDisableUp(currentPage)
+  CheckDisableDawn(currentPage)
 
 
   STEP_DIRECT_BTN.addEventListener("click",PageUp)
