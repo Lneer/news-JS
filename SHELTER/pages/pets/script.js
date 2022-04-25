@@ -251,3 +251,63 @@ function PageDawn(){
   MAX_BACK_BTN.addEventListener("click",PageDawnMax)
 
 
+//Burger
+const BURGERBTN = document.querySelector("#burger");
+const ASIDE = document.querySelector("#aside");
+const LOGO = document.querySelector("#\\#logo");
+const MAIN =document.querySelector("body > main");
+const BODY = document.querySelector("body");
+const SMOG = document.querySelector("#smog");
+
+function burgerClick () { 
+  if (BURGERBTN.classList.contains("burger_normal-pos")) {SideMenuAdd()}
+  else {SideMenuRemove()} 
+}
+
+function LogoStylizer(copacity,cvisibility,ctime_transmition) {
+  LOGO.style.opacity = `${copacity}`;
+  LOGO.style.visibility = `${cvisibility}`;
+  LOGO.style.transition = `opacity ${ctime_transmition}s`;
+}
+
+function SideMenuAdd() {
+      LogoStylizer (0, "hidden", 0.2)
+      SmogSwitcher("block");
+      BURGERBTN.classList.add("burger_direct-rotate")
+      ASIDE.classList.add ("aside_direct-slide")
+      BODY.classList.add("scroll-off")
+      ASIDE.addEventListener("click", SideMenuRemove);
+      MAIN.addEventListener("click", SideMenuRemove);
+      BURGERBTN.addEventListener ("animationend", () => {
+        BURGERBTN.classList.remove("burger_normal-pos")
+        ASIDE.classList.remove("aside_normal-pos")
+        BURGERBTN.classList.add("burger_active-pos")
+        ASIDE.classList.add("aside_active-pos")
+        BURGERBTN.classList.remove("burger_direct-rotate")
+        ASIDE.classList.remove("aside_direct-slide")
+      })    
+}
+
+function SideMenuRemove() {
+      LogoStylizer (100, "visible", 1);
+      SmogSwitcher("none");
+      BURGERBTN.classList.add("burger_reverse-rotate");
+      ASIDE.classList.add("aside_reverse-slide");
+      BODY.classList.remove("scroll-off");
+      ASIDE.removeEventListener("click", SideMenuRemove);
+      MAIN.removeEventListener("click", SideMenuRemove);
+      BURGERBTN.addEventListener ("animationend", () => {
+        BURGERBTN.classList.remove("burger_active-pos")
+        ASIDE.classList.remove("aside_active-pos")
+        BURGERBTN.classList.add("burger_normal-pos")
+        ASIDE.classList.add("aside_normal-pos")
+        BURGERBTN.classList.remove("burger_reverse-rotate")
+        ASIDE.classList.remove("aside_reverse-slide")
+      })
+}
+
+function SmogSwitcher(state) {SMOG.style.display = `${state}`}
+
+BURGERBTN.addEventListener ("click", burgerClick)
+
+
