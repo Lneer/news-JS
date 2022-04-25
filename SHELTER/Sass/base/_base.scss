@@ -58,6 +58,14 @@ h5 {
     @include font (1.5rem, 160%, 0);
 }
 
+.paragraph_l {
+    @extend %font-content ;
+    @include font (1.5rem, 160%, 0);
+}
+.paragraph-mobile-menu {
+    @extend %font-content ;
+    @include font (3.2rem, 160%, 0);
+}
 .color-primary          { color:$color-primary }
 .color-primary-light    { color:$color-primary-light }
 .color-dark-3xl         { color:$color-dark-3xl}

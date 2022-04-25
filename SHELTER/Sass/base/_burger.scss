@@ -3,7 +3,7 @@
     height: 2.2rem;
     font-size: 0;
     background-image: url(../../assets/icons/Burger.svg);
-    display: none;
+    display: none; 
 
     @include media-mobile{
         display: flex;
@@ -16,9 +16,33 @@
     font-size: 0;
     background-image: url(../../assets/icons/Pets-Burger.svg);
     display: none;
+    position: absolute;
+    right: 53px;
+    z-index: 1000 !important;
 
     @include media-mobile{
         display: flex;
         align-self: center;
     }
+
+}
+.burger_normal-pos{
+    transform: rotate(0deg);
+}
+
+.burger_active-pos{
+    transform: rotate(90deg);
+}
+
+@keyframes burger_rot{
+    from {transform: rotate(0deg)}
+    to {transform: rotate(-90deg)}
+}
+.burger_direct-rotate {
+    animation: burger_rot .5s linear ;
+}
+
+.burger_reverse-rotate{
+    animation: burger_rot .5s linear ;
+    animation-direction: reverse;
 }

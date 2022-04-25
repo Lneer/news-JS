@@ -1,4 +1,4 @@
-.round-btn, .nav__link {
+.round-btn, .logo, .nav__link {
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
 }
@@ -7,7 +7,7 @@ h1, .logo_title, h2, h3, h4, h5, .btn, .btn_reverse, .card__description {
   font-family: "Georgia";
 }
 
-.logo_subtitle, .paragraph_l, .donation_text {
+.logo_subtitle, .paragraph_l, .paragraph-mobile-menu, .donation_text {
   font-family: "Arial";
 }
 
@@ -107,6 +107,22 @@ h5 {
 
 .paragraph_l {
   font-size: 1.5rem;
+  line-height: 160%;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.paragraph_l {
+  font-size: 1.5rem;
+  line-height: 160%;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.paragraph-mobile-menu {
+  font-size: 3.2rem;
   line-height: 160%;
   font-style: normal;
   font-weight: 400;
@@ -242,10 +258,6 @@ h5 {
 
 .round-btn:disabled {
   border: 2px solid #CDCDCD;
-}
-
-.round-btn :enabled {
-  border: 2px solid #F1CDB3;
 }
 
 .count {
@@ -403,6 +415,9 @@ h5 {
   font-size: 0;
   background-image: url(../../assets/icons/Pets-Burger.svg);
   display: none;
+  position: absolute;
+  right: 53px;
+  z-index: 1000 !important;
 }
 
 @media (min-width: 300px) and (max-width: 767px) {
@@ -413,6 +428,49 @@ h5 {
     -ms-flex-item-align: center;
         align-self: center;
   }
+}
+
+.burger_normal-pos {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.burger_active-pos {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+@-webkit-keyframes burger_rot {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+  }
+}
+
+@keyframes burger_rot {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+  }
+}
+
+.burger_direct-rotate {
+  -webkit-animation: burger_rot .5s linear;
+          animation: burger_rot .5s linear;
+}
+
+.burger_reverse-rotate {
+  -webkit-animation: burger_rot .5s linear;
+          animation: burger_rot .5s linear;
+  animation-direction: reverse;
 }
 
 @media (min-width: 300px) and (max-width: 767px) {
@@ -446,6 +504,7 @@ h5 {
 .wrapper {
   max-width: calc(100% - 80px);
   margin: 0 auto;
+  overflow: hidden;
 }
 
 @media (min-width: 768px) and (max-width: 1279px) {
@@ -489,6 +548,11 @@ h5 {
 .header_fixpos {
   padding: 30px 0 30px;
   position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.header_background {
   background: #ffffff;
 }
 
@@ -521,12 +585,15 @@ h5 {
 }
 
 @media (min-width: 300px) and (max-width: 767px) {
-  .navigation {
+  .navigation__media {
     display: none;
   }
 }
 
 .nav__link {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   text-decoration: none;
   border-bottom: 0px solid #F1CDB3;
 }
@@ -893,14 +960,15 @@ h5 {
 
 @media (min-width: 300px) and (max-width: 767px) {
   .our-friends__slicer {
+    width: 270px;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
     row-gap: 20px;
-    -webkit-column-gap: 25vw;
-            column-gap: 25vw;
+    -webkit-column-gap: 80px;
+            column-gap: 80px;
   }
 }
 
@@ -912,7 +980,56 @@ h5 {
   }
 }
 
+.spacer {
+  width: 990px;
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .spacer {
+    width: 580px;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 767px) {
+  .spacer {
+    width: 270px;
+  }
+}
+
 .pets__album {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  left: -990px;
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .pets__album {
+    left: -580px;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 767px) {
+  .pets__album {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    left: -270px;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 767px) {
+  .pets__album > :first-child {
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+  }
+}
+
+.slide {
+  width: 990px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -923,26 +1040,25 @@ h5 {
 }
 
 @media (min-width: 768px) and (max-width: 1279px) {
-  .pets__album {
-    gap: 5.21vw;
+  .slide {
+    gap: 40px;
   }
 }
 
 @media (min-width: 300px) and (max-width: 767px) {
-  .pets__album {
-    padding-left: calc((85vw - 270px) / 2);
-    padding-right: calc((85vw - 270px) / 2);
+  .slide {
+    gap: 0px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1279px) {
-  .pets__album > :nth-child(n + 3) {
+  .slide > :nth-child(n + 3) {
     display: none;
   }
 }
 
 @media (min-width: 300px) and (max-width: 767px) {
-  .pets__album > :nth-child(n + 2) {
+  .slide > :nth-child(n + 2) {
     display: none;
   }
 }
@@ -1302,7 +1418,7 @@ footer {
 }
 
 .foot_title {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 @media (min-width: 300px) and (max-width: 767px) {
