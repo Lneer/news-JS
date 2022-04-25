@@ -21,9 +21,12 @@
 .header_fixpos {
     padding: 30px 0 30px;
     position: fixed;
-     background: $color-light-xl;
+    top: 0;
+     z-index: 1000;
 }
-
+.header_background{
+    background: $color-light-xl;
+}
 .header__conteiner{
     display: flex;
     justify-content: space-between;

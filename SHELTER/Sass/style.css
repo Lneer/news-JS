@@ -415,6 +415,9 @@ h5 {
   font-size: 0;
   background-image: url(../../assets/icons/Pets-Burger.svg);
   display: none;
+  position: absolute;
+  right: 53px;
+  z-index: 1000 !important;
 }
 
 @media (min-width: 300px) and (max-width: 767px) {
@@ -545,6 +548,11 @@ h5 {
 .header_fixpos {
   padding: 30px 0 30px;
   position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.header_background {
   background: #ffffff;
 }
 

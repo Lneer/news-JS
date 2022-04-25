@@ -125,7 +125,6 @@ function PetsArrCreate(PetsPerPage){
   let PosiblePetsArr=[]
   let buffArr =[]
   for (let i=0; i<6 ; i++) {PosiblePetsArr = PosiblePetsArr.concat(suffleArr(8)) }
-  //console.log(PosiblePetsArr)
   for(let i = 1; i <= pages; i++){
    let PageIn=[] 
    for(let j = 0; j<PetsPerPage; j++){
@@ -261,6 +260,7 @@ const ASIDE = document.querySelector("#aside");
 const LOGO = document.querySelector("#\\#logo");
 const MAIN =document.querySelector("body > main");
 const BODY = document.querySelector("body");
+const HEADER = document.querySelector("#header");
 const SMOG = document.querySelector("#smog");
 
 function burgerClick () { 
@@ -277,6 +277,7 @@ function LogoStylizer(copacity,cvisibility,ctime_transmition) {
 function SideMenuAdd() {
       LogoStylizer (0, "hidden", 0.2)
       SmogSwitcher("block");
+      HEADER.classList.remove("header_background")
       BURGERBTN.classList.add("burger_direct-rotate")
       ASIDE.classList.add ("aside_direct-slide")
       BODY.classList.add("scroll-off")
@@ -295,6 +296,7 @@ function SideMenuAdd() {
 function SideMenuRemove() {
       LogoStylizer (100, "visible", 1);
       SmogSwitcher("none");
+      HEADER.classList.add("header_background")
       BURGERBTN.classList.add("burger_reverse-rotate");
       ASIDE.classList.add("aside_reverse-slide");
       BODY.classList.remove("scroll-off");
@@ -315,3 +317,55 @@ function SmogSwitcher(state) {SMOG.style.display = `${state}`}
 BURGERBTN.addEventListener ("click", burgerClick)
 
 
+// POPUP - EVENT
+const POPUP_WINDOW = document.querySelector("#popup-window")
+const POPUP_IMAGE=document.querySelector("#image")
+const POPUP_NAME =document.querySelector("#name")
+const POPUP_TYPE =document.querySelector("#type")
+const POPUP_DESCRIPTION =document.querySelector("#description")
+const POPUP_AGE=document.querySelector("#Age")
+const POPUP_INOCULATION=document.querySelector("#Inoculations")
+const POPUP_DISEASES=document.querySelector("#Diseases")
+const POPUP_PARASITES=document.querySelector("#Parasites")
+const POPUP_CLOSE = document.querySelector("#close-popup-btn")
+
+
+function PopupCreate(chosedname){
+  for(let i=0; i<petsBase.length; i++)
+  if (petsBase[i].name == chosedname) {
+
+    POPUP_IMAGE.setAttribute("Src",petsBase[i].img)
+    POPUP_IMAGE.setAttribute("Alt",petsBase[i].name)
+    POPUP_NAME.textContent = petsBase[i].name;
+    POPUP_TYPE.textContent = `${petsBase[i].type} - ${petsBase[i].breed} `;
+    POPUP_DESCRIPTION.textContent = petsBase[i].description;
+    POPUP_AGE.innerHTML = `<b>Age</b>: ${petsBase[i].age}`
+    POPUP_INOCULATION.innerHTML = `<b>Inoculations</b>: ${petsBase[i].inoculations.join(", ")}`
+    POPUP_DISEASES.innerHTML = `<b>Diseases</b>: ${petsBase[i].diseases.join(", ")}`
+    POPUP_PARASITES.innerHTML = `<b>Parasites</b>: ${petsBase[i].parasites.join(", ")}`
+    
+  }
+}
+
+function Lernmore (event) {
+
+  //const target = event.target;
+  //target.getElementbyID()
+ //const petName = target.querySelector(".card__description").textContent;
+ const petName = event.target.querySelector(".card__description").textContent;
+ console.log(petName)
+  PopupCreate(petName)
+  //let cardName = target.ALBUM
+}
+//PopupCreate("Charly");
+
+ALBUM.addEventListener("click",(event) =>{
+  const petName = event.target.querySelector("#card__description").textContent;
+  PopupCreate(petName)
+  POPUP_WINDOW.classList.remove("popup_NoNdisplay")
+  BODY.classList.add("scroll-off")
+  POPUP_CLOSE.addEventListener("click", () =>{
+    POPUP_WINDOW.classList.add("popup_NoNdisplay")
+    BODY.classList.remove("scroll-off")
+  } )
+} )

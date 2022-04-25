@@ -21,9 +21,9 @@
     <title>Our Pets</title>
 </head>
 <body>
-    <header class="header header_fixpos">
+    <header class="header header_fixpos header_background" id="header">
         <div class="wrapper">
-            <div class = header__conteiner>
+            <div class = "header__conteiner" >
 
                 <a class="logo" id="#logo" href="../../pages/main/index.html">
                     <h1 class = "logo_title color-dark-l">Cozy House</h1>
@@ -41,25 +41,8 @@
     </header>
 
     <main>
-        <aside class="aside aside_normal-pos" id="aside">
-            <div class="aside__wrapper">
-                <div class="aside__container">
-                    <div class="aside__header">
-                        <a class="logo" href="../../pages/main/index.html">
-                            <h1 class = "logo_title title_color">Cozy House</h1>
-                            <p class = "logo_subtitle subtitle_color">Shelter for pets in Boston</p>
-                        </a>
-                    </div>
-                    <nav class="navigation aside__navigation">
-                    <a class = "nav__link active paragraph-mobile-menu color-dark-s" href ="#">About the shelter</a>
-                    <a class = "nav__link   paragraph-mobile-menu color-dark-s" href="../../pages/pets/index.html">Our pets</a>
-                    <a class = "nav__link  paragraph-mobile-menu color-dark-s" href="#help">Help the shelter</a>
-                    <a class = "nav__link  paragraph-mobile-menu color-dark-s" href="#footer_link">Contacts</a>
-                </nav>
-                    </nav>
-                </div>
-            </div>
-        </aside>
+        <div class="smog" id = "smog" style="display: none;"></div>
+        
         <section class="pet-page">
             <div class="wrapper">
                 <div class="our-friends__conteiner pets-page_modify">
@@ -72,7 +55,7 @@
                                 <img src="../../assets/images/pets-katrine.png" alt="Katrine">
                             </div>
                             <div class="card__info">
-                                <p class="card__description">Katrine</p>
+                                <p class="card__description" id = "card__description">Katrine</p>
                                 <a class ="card-btn_pos btn_reverse" href="#">Learn more</a>
                             </div>
                         </div>
@@ -81,7 +64,7 @@
                                 <img src="../../assets/images/pets-jennifer.png" alt="Jenifer">
                             </div>
                             <div class="card__info">
-                                <p class="card__description">Jennifer</p>
+                                <p class="card__description" id = "card__description">Jennifer</p>
                                 <a class ="btn_reverse card-btn_pos" href="#">Learn more</a>
                             </div>
                         </div>
@@ -90,7 +73,7 @@
                                 <img src="../../assets/images/pets-woody.png" alt="Woody">
                             </div>
                             <div class="card__info">
-                                <p class="card__description">Woody</p>
+                                <p class="card__description" id = "card__description">Woody</p>
                                 <a class ="card-btn_pos btn_reverse" href="#">Learn more</a>
                             </div>
                         </div>
@@ -99,7 +82,7 @@
                                 <img src="../../assets/images/Sophia.png" alt="Sophia">
                             </div>
                             <div class="card__info">
-                                <p class="card__description">Sophia</p>
+                                <p class="card__description" id = "card__description">Sophia</p>
                                 <a class ="card-btn_pos btn_reverse" href="#">Learn more</a>
                             </div>
                         </div>
@@ -108,7 +91,7 @@
                                 <img src="../../assets/images/pets-timmy.png" alt="Timmy">
                             </div>
                             <div class="card__info">
-                                <p class="card__description">Timmy</p>
+                                <p class="card__description" id = "card__description">Timmy</p>
                                 <a class ="card-btn_pos btn_reverse" href="#">Learn more</a>
                             </div>
                         </div>
@@ -117,7 +100,7 @@
                                 <img src="../../assets/images/pets-charly.png" alt="Charly">
                             </div>
                             <div class="card__info">
-                                <p class="card__description">Charly</p>
+                                <p class="card__description" id = "card__description">Charly</p>
                                 <a class ="card-btn_pos btn_reverse" href="#">Learn more</a>
                             </div>
                         </div>
@@ -126,7 +109,7 @@
                                 <img src="../../assets/images/pets-scarlet.png" alt="Scarlet">
                             </div>
                             <div class="card__info">
-                                <p class="card__description">Scarlett</p>
+                                <p class="card__description" id = "card__description">Scarlett</p>
                                 <a class ="card-btn_pos btn_reverse" href="#">Learn more</a>
                             </div>
                         </div>
@@ -135,7 +118,7 @@
                                 <img src="../../assets/images/Freddie.png" alt="Freddie">
                             </div>
                             <div class="card__info">
-                                <p class="card__description">Freddie</p>
+                                <p class="card__description" id = "card__description">Freddie</p>
                                 <a class ="card-btn_pos btn_reverse" href="#">Learn more</a>
                             </div>
                         </div>
@@ -162,6 +145,55 @@
     
                 </div>
             </div>
+        </section>
+        <aside class="aside aside_petPage aside_normal-pos" id="aside">
+            <div class="aside__wrapper">
+                <div class="aside__container">
+                    <div class="aside__header">
+                        <a class="logo" href="../../pages/main/index.html">
+                            <h1 class = "logo_title color-dark-l">Cozy House</h1>
+                            <p class = "logo_subtitle color-dark-3xl">Shelter for pets in Boston</p>
+                        </a>
+                    </div>
+                    <nav class="navigation aside__navigation">
+                    <a class = "nav__link pet_link active paragraph-mobile-menu  color-dark-l" href ="../../pages/main/index.html">About the shelter</a>
+                    <a class = "nav__link pet_link  paragraph-mobile-menu  color-dark-l" href="#">Our pets</a>
+                    <a class = "nav__link pet_link paragraph-mobile-menu  color-dark-l" href="../../pages/main/index.html#help">Help the shelter</a>
+                    <a class = "nav__link pet_link paragraph-mobile-menu  color-dark-l" href="#footer_link">Contacts</a>
+                </nav>
+                    </nav>
+                </div>
+            </div>
+        </aside>
+        <section class="popup-window popup_NoNdisplay" id="popup-window">
+            <div class="popap__conteiner">
+                    <div class="popup-image__container" >
+                        <img class="popup__image" id="image" src="../../assets/images/pets-scarlet.png" alt="Scarlet">
+                    </div>
+                    <div class="popup__description">
+                        <div class="description__header">
+                            <h3 class="pet-name" id="name">Scarlett</h3>
+                            <h4 class="pet-type"id="type">Dog - Jack Russell Terrier</h4>
+                        </div>
+                        <div>
+                            <h5 class="pet-description" id="description">Scarlett is a happy, playful girl who will make you laugh and smile. She forms a bond quickly and will make a loyal companion and a wonderful family dog or a good companion for a single individual too since she likes to hang out and be with her human.</h5>  
+                        </div>
+                        
+
+                         
+                        
+                        <ul class="pet-data">
+                            <li class="li_style"><h5 class="modal-window" id="Age"><b>Age: </b>3 month</h5></li>
+                            <li class="li_style"><h5 class="modal-window" id="Inoculations"><b>Inoculations: </b>none</h5></li>
+                            <li class="li_style"><h5 class="modal-window" id="Diseases"><b>Diseases: </b>none</h5></li>
+                            <li class="li_style"><h5 class="modal-window" id="Parasites"><b>Parasites: </b>none</h5></li>
+
+                        </ul>
+                    </div>
+            </div>
+            <button class="round-btn popup-btn_pos" id ="close-popup-btn" >
+                <h4 class="color-dark-3xl">&#10008</h4>
+            </button>
         </section>
     </main>
     <footer>

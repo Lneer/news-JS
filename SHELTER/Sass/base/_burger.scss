@@ -16,6 +16,9 @@
     font-size: 0;
     background-image: url(../../assets/icons/Pets-Burger.svg);
     display: none;
+    position: absolute;
+    right: 53px;
+    z-index: 1000 !important;
 
     @include media-mobile{
         display: flex;

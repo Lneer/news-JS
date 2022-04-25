@@ -1,0 +1,134 @@
+.popup-window{
+    margin: 0 auto;
+    position: fixed;
+    left: 50vw;
+    top: 50vh;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+    height: auto;
+    z-index: 30;
+}
+.popup_NoNdisplay{
+    display: none;
+}
+.popap__conteiner{
+    width: 900px;
+    height: 500px;
+    background-color:$color-light-s;
+    display: flex;
+    border-radius: 9px;
+    @include media-tablet{
+        width: 630px;
+        height: auto ;
+      }
+      @include media-mobile{
+        width: 240px;
+        height: auto;
+      }
+
+    &:hover{
+        box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+    }
+  
+}
+
+.popup__image{
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+    @include media-tablet{
+        width: 350px;
+        height: 350px;
+      }
+    @include media-mobile{
+        display: none;
+    }
+}
+.pet-type{
+    margin-top: 10px;
+    @include media-mobile{
+        margin-top: 0px;
+        text-align: center;
+      }
+}
+.popup__description{
+    width: 400px;
+    height: fit-content;
+    display: flex;
+    row-gap: 40px;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-left: 29px;
+    margin-right: 20px;
+    @include media-tablet{
+        width: 260px;
+        height: fit-content;
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+        row-gap: 20px;
+      }
+      @include media-mobile{
+        width: 220px;
+        height: fit-content;
+        margin: 10px auto 10px;
+        row-gap: 20px;
+      }
+}
+
+.pet-description{
+    width: auto;
+    @include media-tablet{
+       font-size: 13px;
+      }
+    @include media-mobile{
+        font-size: 13px;
+        text-align: justify; 
+    }
+}
+.pet-data{
+    margin: 0;
+    list-style: none; 
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px; 
+    padding: 0;
+    @include media-tablet{
+        row-gap: 5px; 
+      }
+      @include media-mobile{
+        row-gap: 5px; 
+    }
+
+    li{
+        margin: 0;
+        &::before{
+            
+            color: $color-primary;
+            content: "\2022";
+            font-weight: bold;
+            display: inline-block;
+            width: 1rem;
+            padding-right: 14px;
+        }
+    }
+}
+.modal-window{
+    display: inline;
+    margin: 0;
+}
+.popup-btn_pos{
+    background: transparent;
+    position: absolute;
+    right: -52px;
+    top: -52px
+}
+.description__header{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    @include media-mobile{
+        align-items: center;
+      }
+}
+

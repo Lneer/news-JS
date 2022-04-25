@@ -7,7 +7,9 @@
     right: -320px;
     z-index: 70;
 }
-
+.aside_petPage{
+    background: $color-light-xl
+}
 
 .aside__wrapper{
     width: 300px;
@@ -36,10 +38,12 @@
 }
 
 .aside_normal-pos{
+    top:0;
     right: -320px;
 }
 
 .aside_active-pos{
+    top:0;
     right: 0;
 }
 
