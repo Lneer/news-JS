@@ -37,7 +37,7 @@ h1, .logo_title, h2, h3, h4, h5, .btn, .btn_reverse, .card__description {
   width: 100vw;
   height: 100vh;
   background: rgba(41, 41, 41, 0.6);
-  position: relative;
+  position: absolute;
   z-index: 50;
 }
 
