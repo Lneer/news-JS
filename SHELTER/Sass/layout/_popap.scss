@@ -1,17 +1,24 @@
 .popup-window{
-    margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
+ /*   background: rgba(41, 41, 41, 0.6);
     position: fixed;
-    left: 50vw;
-    top: 50vh;
-    transform: translate(-50%, -50%);
-    width: fit-content;
-    height: auto;
-    z-index: 30;
+    left:0;
+    top: 0;
+    z-index: 1500;*/
+    
 }
+
 .popup_NoNdisplay{
     display: none;
 }
 .popap__conteiner{
+    margin: 0 auto;
+    position: fixed;
+    left: 50vw;
+    top: 50vh;
+    z-index: 2000;
+    transform: translate(-50%, -50%);
     width: 900px;
     height: 500px;
     background-color:$color-light-s;

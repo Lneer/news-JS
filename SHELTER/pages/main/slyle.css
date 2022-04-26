@@ -37,8 +37,24 @@ h1, .logo_title, h2, h3, h4, h5, .btn, .btn_reverse, .card__description {
   width: 100vw;
   height: 100vh;
   background: rgba(41, 41, 41, 0.6);
-  position: absolute;
+  position: fixed;
   z-index: 50;
+  top: 0;
+  left: 0;
+}
+
+.smog-popup {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(41, 41, 41, 0.6);
+  position: fixed;
+  z-index: 1500;
+  top: 0;
+  left: 0;
+}
+
+.smog-popup:hover + .popap__conteiner .round-btn {
+  background: #F1CDB3;
 }
 
 html {
@@ -822,17 +838,13 @@ h5 {
 }
 
 .popup-window {
-  margin: 0 auto;
-  position: fixed;
-  left: 50vw;
-  top: 50vh;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: auto;
-  z-index: 30;
+  width: 100vw;
+  height: 100vh;
+  /*   background: rgba(41, 41, 41, 0.6);
+    position: fixed;
+    left:0;
+    top: 0;
+    z-index: 1500;*/
 }
 
 .popup_NoNdisplay {
@@ -840,6 +852,13 @@ h5 {
 }
 
 .popap__conteiner {
+  margin: 0 auto;
+  position: fixed;
+  left: 50vw;
+  top: 50vh;
+  z-index: 2000;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   width: 900px;
   height: 500px;
   background-color: #FAFAFA;
