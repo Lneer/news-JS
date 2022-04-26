@@ -8,6 +8,23 @@
     width: 100vw;
     height: 100vh;
     background:rgba(41, 41, 41, 0.6);
-    position: absolute;
+    position: fixed;
     z-index: 50;
+    top: 0;
+    left: 0;
+}
+.smog-popup {
+    width: 100vw;
+    height: 100vh;
+    background:rgba(41, 41, 41, 0.6);
+    position: fixed;
+    z-index: 1500;
+    top: 0;
+    left: 0;
+
+    &:hover + .popap__conteiner {
+     .round-btn {
+        background: $color-primary;
+        } 
+    }
 }

@@ -241,6 +241,7 @@ PETSALBUM.addEventListener("animationend",(animationEvent) => {
 })
 
 // POPUP - EVENT
+const POPAP_SMOG = document.querySelector("#popup-smog")
 const POPUP_WINDOW = document.querySelector("#popup-window")
 const POPUP_IMAGE=document.querySelector("#image")
 const POPUP_NAME =document.querySelector("#name")
@@ -269,20 +270,7 @@ function PopupCreate(chosedname){
     
   }
 }
-
-function Lernmore (event) {
-
-  //const target = event.target;
-  //target.getElementbyID()
- //const petName = target.querySelector(".card__description").textContent;
- const petName = event.target.querySelector(".card__description").textContent;
- console.log(petName)
-  PopupCreate(petName)
-  //let cardName = target.ALBUM
-}
-//PopupCreate("Charly");
-
-PETSALBUM.addEventListener("click",(event) =>{
+  PETSALBUM.addEventListener("click",(event) =>{
   const petName = event.target.parentNode.parentNode.querySelector(".card__description").textContent;
   PopupCreate(petName)
   POPUP_WINDOW.classList.remove("popup_NoNdisplay")
@@ -290,5 +278,12 @@ PETSALBUM.addEventListener("click",(event) =>{
   POPUP_CLOSE.addEventListener("click", () =>{
     POPUP_WINDOW.classList.add("popup_NoNdisplay")
     BODY.classList.remove("scroll-off")
-  } )
+  } 
+  )
+    POPAP_SMOG.addEventListener("click", () =>{
+    POPUP_WINDOW.classList.add("popup_NoNdisplay")
+    BODY.classList.remove("scroll-off")
+  } 
+  ) 
+ 
 } )

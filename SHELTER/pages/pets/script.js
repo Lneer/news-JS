@@ -318,7 +318,7 @@ BURGERBTN.addEventListener ("click", burgerClick)
 
 
 // POPUP - EVENT
-const petocardo = document.querySelector("#pets-card")
+const POPAP_SMOG = document.querySelector("#popup-smog")
 const POPUP_WINDOW = document.querySelector("#popup-window")
 const POPUP_IMAGE=document.querySelector("#image")
 const POPUP_NAME =document.querySelector("#name")
@@ -347,14 +347,6 @@ function PopupCreate(chosedname){
     
   }
 }
-/*
-function Lernmore (event) {
- const petName = event.target.querySelector(".card__description").textContent;
- console.log(petName)
-  PopupCreate(petName)
-  //let cardName = target.ALBUM
-}
-*/
   ALBUM.addEventListener("click",(event) =>{
   const petName = event.target.parentNode.parentNode.querySelector(".card__description").textContent;
   PopupCreate(petName)
@@ -363,7 +355,12 @@ function Lernmore (event) {
   POPUP_CLOSE.addEventListener("click", () =>{
     POPUP_WINDOW.classList.add("popup_NoNdisplay")
     BODY.classList.remove("scroll-off")
-  } )
-  
- //console.log(event.target.parentNode.parentNode.querySelector(".card__description"))
+  } 
+  )
+    POPAP_SMOG.addEventListener("click", () =>{
+    POPUP_WINDOW.classList.add("popup_NoNdisplay")
+    BODY.classList.remove("scroll-off")
+  } 
+  ) 
+ 
 } )
