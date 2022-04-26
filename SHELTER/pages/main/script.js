@@ -283,7 +283,7 @@ function Lernmore (event) {
 //PopupCreate("Charly");
 
 PETSALBUM.addEventListener("click",(event) =>{
-  const petName = event.target.querySelector("#card__description").textContent;
+  const petName = event.target.parentNode.parentNode.querySelector(".card__description").textContent;
   PopupCreate(petName)
   POPUP_WINDOW.classList.remove("popup_NoNdisplay")
   BODY.classList.add("scroll-off")
