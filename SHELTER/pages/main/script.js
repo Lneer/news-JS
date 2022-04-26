@@ -92,6 +92,7 @@ const petsBase = [
 //Burger
 const BURGERBTN = document.querySelector("#burger");
 const ASIDE = document.querySelector("#aside");
+const ASIDE_LOGO =document.querySelector("#aside-logo");
 const LOGO = document.querySelector("#\\#logo");
 const MAIN =document.querySelector("body > main");
 const BODY = document.querySelector("body");
