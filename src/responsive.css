@@ -1,0 +1,41 @@
+.container {
+	display: flex;
+	flex-direction: column;
+}
+
+.alpha-filter{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-bottom: 50px;
+}
+.nav-btn{
+	background: none;
+	border: 0px solid #30c5ff;
+	font: inherit;
+	line-height: 1;
+	padding: 0.1em 0.2em;
+	color: #030303;
+	transition: 0.25s;
+	cursor: pointer;
+}
+.nav-btn:hover,
+.nav-btn:focus {
+    border-color: #3fcc59;
+    color: #30c5ff;;
+    box-shadow: 0 0.5em 0.5em -0.4em #30c5ff;;
+    transform: translateY(-0.25em);
+}
+
+.rss-logo{
+	width: 4em;
+	height: 4em;
+	background: cover;
+	
+}
+footer{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
