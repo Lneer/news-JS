@@ -17,7 +17,7 @@
     "rules": {
         "no-debugger": "off",
         "no-console": 0,
-        "class-methods-use-this": "off"
-        //"@typescript-eslint/no-explicit-any": "on"
+        "class-methods-use-this": "off",
+        "@typescript-eslint/no-explicit-any": "on"
     }
 }
