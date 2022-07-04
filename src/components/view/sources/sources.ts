@@ -9,7 +9,7 @@ export interface SourceObject {
     url: string;
 }
 class Sources {
-    draw(data: SourceObject[]) {
+    draw(data: Array<SourceObject>) {
         const fragment = document.createDocumentFragment() as DocumentFragment;
         const sourceItemTemp = document.querySelector('#sourceItemTemp') as HTMLTemplateElement;
 
