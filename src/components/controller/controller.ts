@@ -17,7 +17,6 @@ class AppController extends AppLoader {
         const newsContainer = <HTMLInputElement>e.currentTarget;
 
         const sourceId: string = target.value;
-        console.log(sourceId)
         if ((newsContainer.getAttribute('data-source') as string) !== sourceId) {
             newsContainer.setAttribute('data-source', sourceId);
             super.getResp(
