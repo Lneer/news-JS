@@ -1,6 +1,6 @@
 import AppController from '../controller/controller';
 import { AppView } from '../view/appView';
-import {ResponseNews, ResponseSources, SourcesData, NewsArticle } from '../../constants/index.types'
+import {ResponseNews, ResponseSources } from '../../constants/index.types'
 
 class App {
     controller: AppController;
