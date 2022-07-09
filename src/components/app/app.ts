@@ -11,7 +11,7 @@ class App {
     }
 
     start() {
-        (document.querySelector('.sources') as HTMLTemplateElement).addEventListener('click', (e: Event) =>
+        (document.querySelector('.sources') as HTMLTemplateElement).addEventListener('change', (e: Event) =>
             this.controller.getNews(e, (data: ResponseNews | undefined ): void => {
                 if (data) {
                     this.view.drawNews(data);
