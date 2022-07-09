@@ -1,19 +1,12 @@
 import './sources.css';
-export interface SourceObject {
-    category: string;
-    country: string;
-    description: string;
-    id: string;
-    language: string;
-    name: string;
-    url: string;
-}
+import {SourcesData } from '../../../constants/index.types'
+
 class Sources {
-    draw(data: Array<SourceObject>) {
+    draw(data: Array<SourcesData>) {
         const fragment = document.createDocumentFragment() as DocumentFragment;
         const sourceItemTemp = document.querySelector('#sourceItemTemp') as HTMLTemplateElement;
 
-        data.forEach((item: SourceObject) => {
+        data.forEach((item: SourcesData) => {
             const sourceClone = sourceItemTemp.content.cloneNode(true) as HTMLTemplateElement;
 
             (sourceClone.querySelector('.source__item-name') as HTMLTemplateElement).textContent = item.name;

@@ -1,30 +1,15 @@
 import './news.css';
-type source = {
-    id: string;
-    name: string;
-};
-// interface NewsObject {
-//     [key: string]: string | source;
-// }
-export interface NewsObject {
-    source: source;
-    author: string;
-    title: string;
-    description: string;
-    url: string;
-    urlToImage: string;
-    publishedAt: string;
-    content: string;
-}
+import {NewsArticle } from '../../../constants/index.types'
+
 
 class News {
-    draw(data: Array<NewsObject>): void {
-        const news: NewsObject[] = data.length >= 10 ? data.filter((_item: NewsObject, idx: number) => idx < 10) : data;
+    draw(data: Array<NewsArticle>): void {
+        const news: NewsArticle[] = data.length >= 10 ? data.filter((_item: NewsArticle, idx: number) => idx < 10) : data;
 
         const fragment = document.createDocumentFragment() as DocumentFragment;
         const newsItemTemp = document.querySelector('#newsItemTemp') as HTMLTemplateElement;
 
-        news.forEach((item: NewsObject, idx: number) => {
+        news.forEach((item: NewsArticle, idx: number) => {
             const newsClone = newsItemTemp.content.cloneNode(true) as HTMLTemplateElement;
 
             if (idx % 2) (newsClone.querySelector('.news__item') as HTMLTemplateElement).classList.add('alt');

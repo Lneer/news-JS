@@ -1,10 +1,9 @@
 import AppLoader from './appLoader';
-import { TotalAPiObject } from '../view/appView';
+import { CallbackFunc,ResponseNews, ResponseSources} from '../../constants/index.types'
 
-type CallbackFunc = (data?: TotalAPiObject) => void;
 
 class AppController extends AppLoader {
-    getSources(callback: CallbackFunc) {
+    getSources(callback: CallbackFunc<NonNullable<ResponseSources>>): void {
         super.getResp(
             {
                 endpoint: 'sources',
@@ -13,7 +12,7 @@ class AppController extends AppLoader {
         );
     }
 
-    getNews(e: Event, callback: CallbackFunc) {
+    getNews(e: Event, callback: CallbackFunc<NonNullable<ResponseNews>>): void {
         let target = <HTMLTemplateElement>e.target;
         const newsContainer = <HTMLTemplateElement>e.currentTarget;
 

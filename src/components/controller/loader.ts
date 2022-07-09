@@ -1,4 +1,5 @@
-interface GetResp {
+import { CallbackFunc, ResponseSources } from '../../constants/index.types'
+interface RequestSettings {
     endpoint: string;
     options?: RequestOptions;
 }
@@ -7,17 +8,21 @@ interface RequestOptions {
     [key: string]: string;
 }
 
-interface PreLoader {
+interface LoaderBase {
     baseLink: string;
     options: RequestOptions;
-    getResp({ endpoint, options }: GetResp, callback: () => void): void;
+    getResp({ endpoint, options }: RequestSettings, callback: CallbackFunc<void>) :void;
     errorHandler(res: Response): Response;
-    makeUrl(options: RequestOptions, endpoint: string): string;
-    load(method: string, endpoint: string, callback: callbackFunc, options: RequestOptions): void;
+    makeUrl(options: Partial<RequestOptions>, endpoint: string): string;
+    load<T>(method: string, endpoint: string, callback: CallbackFunc<T | void>, options: RequestOptions): void;
 }
-export type callbackFunc = <T>(data?: T) => void;
 
-class Loader implements PreLoader {
+enum BadResponseStatus  {
+    'Unauthorized' =  401,
+    'Not Found' = 404,
+}
+
+class Loader implements LoaderBase {
     baseLink: string;
     options: RequestOptions;
     constructor(baseLink: string, options: RequestOptions) {
@@ -26,17 +31,17 @@ class Loader implements PreLoader {
     }
 
     getResp(
-        { endpoint, options = {} }: GetResp,
-        callback = (): void => {
+        { endpoint, options = {} }: RequestSettings,
+        callback = () => {
             console.error('No callback for GET response');
         }
-    ): void {
+    ):void {
         this.load('GET', endpoint, callback, options);
     }
 
-    errorHandler(res: Response) {
+    errorHandler(res: Response):Response {
         if (!res.ok) {
-            if (res.status === 401 || res.status === 404)
+            if( Object.values(BadResponseStatus).includes(res.status))
                 console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
             throw Error(res.statusText);
         }
@@ -44,8 +49,8 @@ class Loader implements PreLoader {
         return res;
     }
 
-    makeUrl(options: RequestOptions, endpoint: string): string {
-        const urlOptions: RequestOptions = { ...this.options, ...options };
+    makeUrl(options: Partial<RequestOptions>, endpoint: string): string {
+        const urlOptions: Partial<RequestOptions> = { ...this.options, ...options };
         let url: string = `${this.baseLink}${endpoint}?`;
 
         Object.keys(urlOptions).forEach((key) => {
@@ -55,12 +60,12 @@ class Loader implements PreLoader {
         return url.slice(0, -1);
     }
 
-    load(method: 'GET' | 'POST', endpoint: string, callback: callbackFunc, options: RequestOptions = {}) {
+    load<ResponseSources>(method: 'GET' | 'POST', endpoint: string, callback: CallbackFunc<ResponseSources>, options: Partial<RequestOptions> = {}):void {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
-            .then((res) => res.json())
-            .then((data) => callback(data))
-            .catch((err) => console.error(err));
+            .then((res:Response):Promise<ResponseSources> => res.json())
+            .then((data:ResponseSources) => callback(data))
+            .catch((err:Error) => console.error(err));
     }
 }
 
