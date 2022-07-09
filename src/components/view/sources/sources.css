@@ -1,11 +1,13 @@
 .sources {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+    margin: 0 auto;
+    max-width: 700px;
     height: fit-content; 
     overflow: auto;
     align-items: center;
     font: 300 1em 'Fira Sans', sans-serif;
+    overflow: hidden;
 }
 
 .source__item {
